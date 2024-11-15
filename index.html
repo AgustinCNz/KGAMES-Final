@@ -14,21 +14,22 @@
         <img class="logo" src="/img/logo/k-games.png" alt="Logo de K-GAMES"> 
             <div class="search-container">
                 <nav class="inicio">
-                    <a href="#" onclick="ShowModalCuenta()" class="usuario">cuenta</a>
-                    <a href="/index.html">Inicio</a>
+                    <a href="#" onclick="ShowModalCuenta()" class="usuario" id="iniciarusuario">Iniciar sesion</a>
+                    <a href="#">Inicio</a>
+                    <a href="#" id="calculadora" onclick="ShowmodalCalculadora()">Calculadora</a>
                         <div class="dropdown">
                             <a href="/html/popular.html" class="dropdown-toggle">Juegos Populares</a>
-                                 <div class="dropdown-content">
+                                <div class="dropdown-content">
                                     <div class="dropdown-submenu">
                                         <a href="#">Categorias</a>
                                             <div class="submenu-content">
-                                                 <a href="#">Accion</a>
-                                                 <a href="#">Deportes</a>
-                                                 <a href="#">Aventuras</a>
+                                                <a href="#">Accion</a>
+                                                <a href="#">Deportes</a>
+                                                <a href="#">Aventuras</a>
                                             </div>
-                                     </div>
-                                  </div>
-                         </div>
+                                    </div>
+                                </div>
+                        </div>
                     <a href="/html/nosotros.html">Sobre Nosotros</a>
                     <input type="text" placeholder="Buscar..." class="search-bar" id="searchInput"> 
                     <button class="search-button" onclick="searchGame()">🔍</button>
@@ -36,14 +37,24 @@
             </div>
     </div>
     <!-- fin del navbar -->
-     
+    
     <!---Modal para cuentas---->
     <div id="myModalCuenta" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModalCuenta()">&times;</span>
-            <h2>¿Que Quieres Hacer?</h2>
-            <button onclick="mostrarFormulario('crear')">Crear Cuenta</button>
-            <button onclick="mostrarFormulario('login')">Iniciar Sesion</button>
+            <div class="login-container">
+                <h2 id="loginh2">Iniciar sesion</h2>
+                <form id="loginForm" onsubmit="iniciarSesion(event)">
+                    <label id="blanco">Usuario</label>
+                    <input type="text" id="username" placeholder="Usuario" required>
+        
+                    <label id="blanco">Contraseña</label>
+                    <input type="password"  id="password" placeholder="Contraseña" required>
+                    
+                    <button type="submit" id="iniciar" >Iniciar Sesion</button>
+                </form>
+                <p id="loginMessage"></p>
+            </div>
         </div>
     </div>
     <!-- Fin del Modal para cuentas-->
@@ -90,7 +101,7 @@
 <!---Assassins creed--->
     <article>
         <div>
-            <img src="/img2/Juegos-inicio/Assassins creed(1).png" alt="Assassins creed" class="game" class="game" onclick="showModal('Assasinscreed')">
+            <img src="/img2/Juegos-inicio/Assassins creed(1).png" alt="Assassins creed" class="game" onclick="showModal('assasinscreed')">
             <a href="#" class="boton-comprar2">COMPRAR</a>
         </div>
     </article>
@@ -107,7 +118,7 @@
     <article>
         <div>
             <img src="/img2/Juegos-inicio/tombraidergod.png" alt="Tomb Raider" class="game" class="game" onclick="showModal('tomb raider')">
-             <a href="#" class="boton-comprar2">COMPRAR</a>
+            <a href="#" class="boton-comprar2">COMPRAR</a>
         </div>
     </article>
 
@@ -119,23 +130,23 @@
 <!---- Modal para juegos ---->
 <div id="myModal" class="modal">
     <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-                <div class="main-content">
-                    <img src="" alt="game" class="game-modal" id="modalImage">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="main-content">
+        <img src="" alt="game" class="game-modal" id="modalImage">
         
-                        <div class="carousel">
-                            <div class="carousel-slide">
-                                <img src="" alt="Game Image 1">
-                                <img src="" alt="Game Image 2">
-                                <img src="" alt="Game Image 3">
-                            </div>
-                         </div>
-                </div>
-                                <p class="sinopsis" id="resumen"></p>
-                                <h3>Requisitos Mínimos</h3>
-                                <ul id="requisitos-min-list"></ul>
-                                <h3>Requisitos Recomendados</h3>
-                                <ul id="requisitos-rec-list"></ul>
+        <div class="carousel">
+            <div class="carousel-slide">
+                <img src="" alt="Game Image 1">
+                <img src="" alt="Game Image 2">
+                <img src="" alt="Game Image 3">
+            </div>
+        </div>
+    </div>
+        <p class="sinopsis" id="resumen"></p>
+        <h3>Requisitos Mínimos</h3>
+        <ul id="requisitos-min-list"></ul>
+        <h3>Requisitos Recomendados</h3>
+        <ul id="requisitos-rec-list"></ul>
     </div>
 </div>
 
@@ -150,6 +161,38 @@
 </div>
 <!-- fin del carrusel de ofertas-->
 
+<!---MODAL PARA CALCULADORA--->
+<div id="ModalCalculadora" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModalCalculadora()">&times;</span>
+        <div id="appBg">
+            <form name="calculadora">
+                <input id="text" type="textfield" name="ans" value="" autocomplete="off" readonly>
+                
+                <input type="button" class="grey" value="7" onclick="document.calculadora.ans.value+='7'">
+                <input type="button" class="grey" value="8" onclick="document.calculadora.ans.value+='8'">
+                <input type="button" class="grey" value="9" onclick="document.calculadora.ans.value+='9'">
+                <input type="button" class="orange" value="+"onclick="document.calculadora.ans.value+='+'">
+                <br>
+                <input type="button" class="grey" value="4" onclick="document.calculadora.ans.value+='4'">
+                <input type="button" class="grey" value="5" onclick="document.calculadora.ans.value+='5'">
+                <input type="button" class="grey" value="6" onclick="document.calculadora.ans.value+='6'">
+                <input type="button" class="orange" value="-" onclick="document.calculadora.ans.value+='-'">
+                <br>
+                <input type="button" class="grey" value="1" onclick="document.calculadora.ans.value+='1'">
+                <input type="button" class="grey" value="2" onclick="document.calculadora.ans.value+='2'">
+                <input type="button" class="grey" value="3" onclick="document.calculadora.ans.value+='3'">
+                <input type="button" class="orange" value="X" onclick="document.calculadora.ans.value+='*'">
+                <br>
+                <input type="button" class="grey" value="0" onclick="document.calculadora.ans.value+='0'">
+                <input type="reset"  value="C" onclick="document.calculadora.ans.value+='C'">
+                <input type="button" value="=" onclick="document.calculadora.ans.value=eval(document.calculadora.ans.value)">
+                <input type="button" class="orange" value="." onclick="document.calculadora.ans.value+='.'">
+                <input type="button" class="orange" value="/" onclick="document.calculadora.ans.value+='/'">
+            </form>
+        </div>
+    </div>
+</div>
 
     <!----FOOTER---->
     <footer class="footer">
@@ -157,15 +200,15 @@
                 <div class="footer-section">
                     <h3>Sobre Nosotros</h3>
                     <p>Somos tu tienda de juegos preferida, ofreciendo los últimos títulos para PS4 y PS5. ¡Explora y encuentra tu próximo juego favorito!</p>
-                 </div>
-                 <div class="footer-section">
+                </div>
+                <div class="footer-section">
                     <h3>Contacto</h3>
                         <ul>
                             <li>Email: contacto@k-games.com</li>
                             <li>Teléfono: +1 123 456 7890</li>
                             <li>Dirección: 123 Gaming Street, Miami, FL</li>
                         </ul>
-                  </div>
+                </div>
                     <div class="footer-section">
                             <h3>Síguenos</h3>
                         <div class="social-icons">

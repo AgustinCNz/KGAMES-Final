@@ -1,42 +1,61 @@
 body{
-margin: 0;
-padding: 0;
-background: url(https://i.pinimg.com/564x/91/c3/6e/91c36ebeccbc439e5b889b0d8cb9032a.jpg);
-height: 100%;
-width: 100%;
-background-position: center;
-font-family: sans-serif;
-
-}
-
-
-.container{
-    display: flex;
-    padding-top: 90px;
-    justify-content: center;
-    gap: 20px;
-}
-
-.tarjeta-juego{
-    display: block;
-    background-color: none;
-    border-radius: 10px;
-    text-align: center;
-    overflow: hidden;
-    opacity: 1.0;
-    width: 400px;
-}
-
-.boton-comprar {
+    margin: 0;
+    padding: 0;
+    background: url(https://i.pinimg.com/564x/91/c3/6e/91c36ebeccbc439e5b889b0d8cb9032a.jpg);
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    font-family: sans-serif;
+    
+    }
+    
+    
+    .container{
+        display: flex;
+        padding-top: 90px;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .tarjeta-juego{
+        display: block;
+        background-color: none;
+        border-radius: 10px;
+        text-align: center;
+        overflow: hidden;
+        opacity: 1.0;
+        width: 400px;
+    }
+    
+    .boton-comprar {
+        color: white;
+        font-family: "Press Start 2P", cursive; 
+        width: 150px;
+        height: 35px;
+        margin-left: 90px;
+        margin-top: 30px;
+        display: grid;
+        padding-top: 20px;
+        padding-left: 5px;
+        background-color: #162447; 
+        text-align: center;
+        border: 4px solid #4a3f5e; 
+        border-radius: 0;
+        text-decoration: none;
+        outline: 3px solid #210697; 
+        letter-spacing: 1px; 
+        image-rendering: pixelated;
+    }
+    .boton-comprar2{
     color: white;
     font-family: "Press Start 2P", cursive; 
-    width: 150px;
+    width: 170px;
     height: 35px;
-    margin-left: 90px;
+    margin-left: 35px;
     margin-top: 30px;
     display: grid;
     padding-top: 20px;
-    padding-left: 5px;
+    padding-left: 10px;
     background-color: #162447; 
     text-align: center;
     border: 4px solid #4a3f5e; 
@@ -45,394 +64,503 @@ font-family: sans-serif;
     outline: 3px solid #210697; 
     letter-spacing: 1px; 
     image-rendering: pixelated;
-}
-.boton-comprar2{
-color: white;
-font-family: "Press Start 2P", cursive; 
-width: 170px;
-height: 35px;
-margin-left: 35px;
-margin-top: 30px;
-display: grid;
-padding-top: 20px;
-padding-left: 10px;
-background-color: #162447; 
-text-align: center;
-border: 4px solid #4a3f5e; 
-border-radius: 0;
-text-decoration: none;
-outline: 3px solid #210697; 
-letter-spacing: 1px; 
-image-rendering: pixelated;
-}
-
-.boton-comprar:hover {
-    background-color: #4b3279; 
-    color: #ffffff; 
-    outline-color: #000000; 
-}
-
-.boton-comprar2:hover {
-    background-color: #4b3279; 
-    color: #ffffff; 
-    outline-color: #000000; 
-}
-
-
-.sinopsis{
-    text-align: left;
-}
-
-.game{
-    max-width: 100%;
-    opacity: 1.0;
-    padding-left: 20px;
-}
-.game:hover{
-    transform: scale(1.1); 
-    transition: all 0.3s ease-in-out;
-}
-
-.logo{
-    opacity: 1.0;
-    height: 79px;
-    margin-right: auto;
-}
-
-.nav-bar{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: url(https://i.pinimg.com/564x/4d/d2/2a/4dd22a77bebe561df0d63c2c0d30c501.jpg);
-    background-position:  cover;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.search-bar{
-    padding: 8px;
-    border: 2px solid #464444;
-    border-radius: 4px;
-    background-color: #1b1b3a;
-    color: #ffffff;
-}
-
-.search-bar::placeholder {
-    color: #9a9a9a;
-}
-
-.search-container{
-    display: flex;
-    align-items: center;
-}
-
-.search-button{
-    background-color: #1d1b1b;
-    border: none;
-    color: #ffffff;
-    padding: 8px 16px;
-    cursor: pointer;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-.search-button:hover{
-    background-color: #0c0004;
-}
-
-
-
-.modal{
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
-}
-
-.modal2-content{
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 100%;
-}
-.modal-content{
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-.close{
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,.close:focus{
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.game-modal{
-    opacity: 1.0;
-}
-
-
-a{
-    padding: 2px;
-    border-radius: 5px;
-    text-decoration: none;
-    color: white;
-}
-
-.inicio{
-    gap: 10px;
-    font-family: "Press Start 2P", cursive; ;
-}
-
-.inicio a:hover{
-    text-shadow: 0 0 5px #00ff00;
-}
-
-#myModalCuenta .modal-content{
-    background-color: black;  
-    width: 42%;
-    height: 16%;
-}
-
-#myModalCuenta h2 { 
-    font-family: "Press Start 2P", cursive; 
-    color: white; 
-    text-align: center;
-}
-#myModalCuenta button {
-    width: 200px;
-    height: 50px;
-    font-size: 18px;
-    margin: 30px;
-    margin-top: -1px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-family: "Press Start 2P", cursive; 
-    cursor: pointer;
-    transition: all 0,3s ease-in-out;
-    image-rendering: pixelated;
-}
-
-#myModalCuenta button:hover{
-    background-color: #0056b3;
-    color: #00ff00;
-    border: 2px solid #00ff00;
-    transform: scale(1.1);
-    box-shadow: 0px 0px 10px 2px #00ff00;
-}
-
-
-.main-content {
-    display: flex;
-    gap: 150px;
-}
-
-.carousel {
-    width: 500px; /* Aumenta el ancho del contenedor */
-    height: 300px; /* Aumenta la altura del contenedor */
-    overflow: hidden;
-    border-radius: 10px;
-    margin-top: 50px;
-    position: relative;
-}
-
-.carousel-slide {
-    display: flex;
-    transition: transform 0.5s ease;
-    width: calc(100% * 3); /* Ajusta para el número de imágenes */
-}
-
-.carousel-slide img {
-    width: 500px; /* Ajusta el ancho de la imagen para que se ajuste al contenedor */
-    height: 300px; /* Ajusta la altura de la imagen para que se ajuste al contenedor */
-    object-fit: cover; /* Asegura que las imágenes se ajusten sin distorsión */
-    border-radius: 10px;
-}
-
-/* Contenedor del carrusel */
-.carousel-oferta {
-    width: 300%;
-    height: 100%;
-    max-height: 700px;
-    max-width: 1200px; /* Ajusta según tus necesidades */
-    margin: auto;
-    overflow: hidden; /* Oculta las imágenes que no están visibles */
-    border: 2px solid #ddd; /* Opcional: solo para visualización */
-    position: relative;
-}
-
-/* Contenedor de las imágenes del carrusel */
-.carousel-slide-oferta {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-/* Imágenes dentro del carrusel */
-.carousel-slide-oferta img {
-    width: 100%;
-    max-width: 1200px; /* Ajusta según tus necesidades */
-    height: auto; /* Mantén la proporción de la imagen */
-}
-
-
-
-.dropdown { 
-    position: relative; 
-    display: inline-block; 
-} 
-
-.dropdown-content { 
-    display: none; 
-    position: absolute; 
-    background: url(https://i.pinimg.com/564x/91/c3/6e/91c36ebeccbc439e5b889b0d8cb9032a.jpg);
-    background-position: center;
-    left: 10%;
-    top: 20px;
-    min-width: 160px; 
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
-    z-index: 1; 
-} 
-
-.dropdown-content a {
-    color: white; 
-    padding: 5px 5px; 
-    text-decoration: none; 
-    display: block; 
-} 
-
-.dropdown:hover .dropdown-content { 
-    display: block; }
-
-.dropdown-submenu{
-    position: relative;
-}
-
-.submenu-content { 
-    display: none; 
-    position: absolute; 
-    left: 180px; /* Ajusta según sea necesario */ 
-    top: 0; 
-    background: url(https://i.pinimg.com/564x/91/c3/6e/91c36ebeccbc439e5b889b0d8cb9032a.jpg);
-    background-position: center;
-    min-width: 160px; 
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
-    z-index: 1; 
-}
-
-.dropdown-submenu:hover .submenu-content { 
-    display: block; 
-}
-
-.dropdown-content a, .submenu-content a { 
-    color: white; 
-    padding: 12px 16px; 
-    text-decoration: none; 
-    display: block; 
-}
-
-
-.JuegosPopulares2 {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-section{
-    background: url(https://i.pinimg.com/564x/a8/d4/9c/a8d49cdeb06949b5a925dd15515e8840.jpg)
-}
-.oferta{
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-.oferta img {
-    width: 100%; 
-    max-height: 560px; 
-}
-
-.ofertasection article{
-    width: 100%;
-    margin-top: 30px;
-    padding: 0;
-}
-
-.footer {
-    background-color: #333;
-    color: #f1f1f1;
-    padding: 20px 0;
-    text-align: center;
-    font-family: 'Press Start 2P', cursive;
-}
-
-.footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.footer-section {
-    flex: 1;
-    margin: 10px;
-    min-width: 250px;
-}
-
-.footer-section h3 {
-    border-bottom: 2px solid #f1f1f1;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-}
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section li {
-    margin: 5px 0;
-}
-
-.footer-section p {
-    font-size: 14px;
-}
-
-.social-icons a {
-    margin: 0 10px;
-    display: inline-block;
-}
-
-.social-icons img {
-    width: 24px;
-    height: 24px;
-}
-
-.footer-bottom {
-    background-color: #222;
-    padding: 10px;
-    margin-top: 20px;
-    font-size: 12px;
-}
+    }
+    
+    .boton-comprar:hover {
+        background-color: #4b3279; 
+        color: #ffffff; 
+        outline-color: #000000; 
+    }
+    
+    .boton-comprar2:hover {
+        background-color: #4b3279; 
+        color: #ffffff; 
+        outline-color: #000000; 
+    }
+    
+    
+    .sinopsis{
+        text-align: left;
+    }
+    
+    .game{
+        max-width: 100%;
+        opacity: 1.0;
+        padding-left: 20px;
+    }
+    .game:hover{
+        transform: scale(1.1); 
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .logo{
+        opacity: 1.0;
+        height: 79px;
+        margin-right: auto;
+    }
+    
+    .nav-bar{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: url(https://i.pinimg.com/564x/4d/d2/2a/4dd22a77bebe561df0d63c2c0d30c501.jpg);
+        background-position:  cover;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+    
+    .search-bar{
+        padding: 8px;
+        border: 2px solid #464444;
+        border-radius: 4px;
+        background-color: #1b1b3a;
+        color: #ffffff;
+    }
+    
+    .search-bar::placeholder {
+        color: #9a9a9a;
+    }
+    
+    .search-container{
+        display: flex;
+        align-items: center;
+    }
+    
+    .search-button{
+        background-color: #1d1b1b;
+        border: none;
+        color: #ffffff;
+        padding: 8px 16px;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+    
+    .search-button:hover{
+        background-color: #0c0004;
+    }
+    
+    
+    
+    
+    .modal{
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+    }
+    
+    .modal2-content{
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 100%;
+    }
+    .modal-content{
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+    
+    .close{
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    
+    .close:hover,.close:focus{
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    .game-modal{
+        opacity: 1.0;
+    }
+    
+    
+    a{
+        padding: 2px;
+        border-radius: 5px;
+        text-decoration: none;
+        color: white;
+    }
+    /* MODAL DE INICIO DE SESION*/
+    .inicio{
+        gap: 10px;
+        font-family: "Press Start 2P", cursive; ;
+    }
+    
+    .inicio a:hover{
+        text-shadow: 0 0 5px #00ff00;
+    }
+    
+    #myModalCuenta .modal-content{
+        background-color: black;  
+        width: 26%;
+        height: 50%;
+    }
+    
+    #blanco{
+        color: white;
+        font-family: "Press Start 2P", cursive; ;
+    }
+    
+    .login-container {
+        background-color: #1c1e22;
+        padding: 20px;
+        border: 3px solid #3c3f44;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+        text-align: center;
+        image-rendering: pixelated;
+    }
+    
+    #loginh2 {
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: white;
+        text-shadow: 0 0 5px #00ff00;
+    }
+    
+    #usuario {
+        display: block;
+        margin: 10px 0 5px;
+    }
+    
+    #username {
+        width: 90%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 2px solid #3c3f44;
+        border-radius: 3px;
+        background-color: #2c2f34;
+        color: white;
+        font-size: 14px;
+        box-shadow: inset 0 0 5px rgba(0, 255, 0, 0.5);
+    }
+    #password{
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #3c3f44;
+            border-radius: 3px;
+            background-color: #2c2f34;
+            color: white;
+            font-size: 14px;
+            box-shadow: inset 0 0 5px rgba(0, 255, 0, 0.5);
+    }
+    
+    #iniciar {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        border: 2px solid #0056b3;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        image-rendering: pixelated;
+    }
+    
+    #iniciar:hover {
+        background-color: #0056b3;
+        color: #00ff00;
+        border: 2px solid #00ff00;
+        transform: scale(1.1);
+        box-shadow: 0px 0px 10px 2px #00ff00;
+    }
+    
+    #loginMessage {
+        margin-top: 15px;
+        font-size: 14px;
+    }
+    
+    /* FIN DEL MODAL DE INICIO DE SESION*/
+    
+    /* INICIO DEL CARRUSEL*/
+    
+    .main-content {
+        display: flex;
+        gap: 150px;
+    }
+    
+    .carousel {
+        width: 500px; /* Aumenta el ancho del contenedor */
+        height: 300px; /* Aumenta la altura del contenedor */
+        overflow: hidden;
+        border-radius: 10px;
+        margin-top: 50px;
+        position: relative;
+    }
+    
+    .carousel-slide {
+        display: flex;
+        transition: transform 0.5s ease;
+        width: calc(100% * 3); /* Ajusta para el número de imágenes */
+    }
+    
+    .carousel-slide img {
+        width: 500px; /* Ajusta el ancho de la imagen para que se ajuste al contenedor */
+        height: 300px; /* Ajusta la altura de la imagen para que se ajuste al contenedor */
+        object-fit: cover; /* Asegura que las imágenes se ajusten sin distorsión */
+        border-radius: 10px;
+    }
+    
+    /* Contenedor del carrusel */
+    .carousel-oferta {
+        width: 300%;
+        height: 100%;
+        max-height: 700px;
+        max-width: 1200px; /* Ajusta según tus necesidades */
+        margin: auto;
+        overflow: hidden; /* Oculta las imágenes que no están visibles */
+        border: 2px solid #ddd; /* Opcional: solo para visualización */
+        position: relative;
+    }
+    
+    /* Contenedor de las imágenes del carrusel */
+    .carousel-slide-oferta {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+    
+    /* Imágenes dentro del carrusel */
+    .carousel-slide-oferta img {
+        width: 100%;
+        max-width: 1200px; /* Ajusta según tus necesidades */
+        height: auto; /* Mantén la proporción de la imagen */
+    }
+    
+    /* FINAL DEL CARRUSEL*/
+    
+    /* INICIO DEL MENU DESPLEGABLE */
+    
+    .dropdown { 
+        position: relative; 
+        display: inline-block; 
+    } 
+    
+    .dropdown-content { 
+        display: none; 
+        position: absolute; 
+        background: url(https://i.pinimg.com/564x/91/c3/6e/91c36ebeccbc439e5b889b0d8cb9032a.jpg);
+        background-position: center;
+        left: 10%;
+        top: 20px;
+        min-width: 160px; 
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
+        z-index: 1; 
+    } 
+    
+    .dropdown-content a {
+        color: white; 
+        padding: 5px 5px; 
+        text-decoration: none; 
+        display: block; 
+    } 
+    
+    .dropdown:hover .dropdown-content { 
+        display: block; }
+    
+    .dropdown-submenu{
+        position: relative;
+    }
+    
+    .submenu-content { 
+        display: none; 
+        position: absolute; 
+        left: 180px; /* Ajusta según sea necesario */ 
+        top: 0; 
+        background: url(https://i.pinimg.com/564x/91/c3/6e/91c36ebeccbc439e5b889b0d8cb9032a.jpg);
+        background-position: center;
+        min-width: 160px; 
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
+        z-index: 1; 
+    }
+    
+    .dropdown-submenu:hover .submenu-content { 
+        display: block; 
+    }
+    
+    .dropdown-content a, .submenu-content a { 
+        color: white; 
+        padding: 12px 16px; 
+        text-decoration: none; 
+        display: block; 
+    }
+    
+    /* FIN DEL MENU DESPLEGABLE */
+    
+    .JuegosPopulares2 {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    section{
+        background: url(https://i.pinimg.com/564x/a8/d4/9c/a8d49cdeb06949b5a925dd15515e8840.jpg)
+    }
+    
+    /* INICIO DE OFERTA*/
+    
+    .oferta{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .oferta img {
+        width: 100%; 
+        max-height: 560px; 
+    }
+    
+    .ofertasection article{
+        width: 100%;
+        margin-top: 30px;
+        padding: 0;
+    }
+    /* FIN DE OFERTA*/
+    
+    /* INICIO DE FOOTER */
+    
+    .footer {
+        background-color: #333;
+        color: #f1f1f1;
+        padding: 20px 0;
+        text-align: center;
+        font-family: 'Press Start 2P', cursive;
+    }
+    
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .footer-section {
+        flex: 1;
+        margin: 10px;
+        min-width: 250px;
+    }
+    
+    .footer-section h3 {
+        border-bottom: 2px solid #f1f1f1;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .footer-section li {
+        margin: 5px 0;
+    }
+    
+    .footer-section p {
+        font-size: 14px;
+    }
+    
+    .social-icons a {
+        margin: 0 10px;
+        display: inline-block;
+    }
+    
+    .social-icons img {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .footer-bottom {
+        background-color: #222;
+        padding: 10px;
+        margin-top: 20px;
+        font-size: 12px;
+    }
+    
+    /* FINAL DE FOOTER*/
+    
+    /* INICIO DE CALCULADORA */ 
+    #calculadora{
+        display: none;
+    }
+    #appBg { height: auto; 
+        width: 100%; 
+        border: 2px solid black; 
+        border-radius: 10px; 
+        background-color: #000; 
+        padding: 20px; 
+        box-sizing: border-box; 
+    } 
+    #appBg form { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center;
+    } 
+            
+    #appBg input[type=textfield] { 
+        width: 100%; 
+        cursor: default; 
+        font-family: 'Press Start 2P', sans-serif; 
+        background-color: black; 
+        color: white; 
+        padding: 10px; 
+        text-align: right; 
+        font-size: 24px; 
+        border: 2px solid #fff; 
+        outline: none; 
+        margin-bottom: 10px; 
+    } 
+    #appBg input[type=button], #appBg input[type=reset] { 
+        width: 22%; 
+        cursor: pointer; 
+        font-family: 'Press Start 2P', sans-serif; 
+        font-size: 14px; color: white; 
+        padding: 10px; 
+        margin: 5px; 
+        border: 2px solid #fff; 
+        border-radius: 8px; 
+        background-color: #444; 
+        transition: background-color 0.3s; 
+    } 
+    
+    #appBg input[type=button]:hover, #appBg input[type=reset]:hover { 
+        background-color: #888; 
+    }
+    #appBg .orange { 
+        background-color: rgb(253, 149, 3); 
+    } 
+    #appBg .grey { 
+        background-color: rgb(51, 51, 51); 
+    } 
+    #appBg .close { 
+        color: #aaa; 
+        float: right; 
+        font-size: 28px; 
+        font-weight: bold; 
+    } 
+    #appBg .close:hover, #appBg .close:focus { 
+        color: black; 
+        text-decoration: none; 
+        cursor: pointer;
+    }
+    /* FIN DE CALCULADORA */

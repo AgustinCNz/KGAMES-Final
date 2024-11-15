@@ -5,7 +5,7 @@ const games = {
     'sparking':'https://images.g2a.com/300x400/1x1x1/dragon-ball-sparking-zero-pc-steam-account-global-i10000506157007/302aae41117241c89dc0c949',
     'silent hill': 'https://images.g2a.com/300x400/1x1x1/silent-hill-2-pc-steam-key-global-i10000506161001/9a54fc95bde246389705df2d',
     'god of war': 'img2/Modal2/godmodal2.png',
-    'Assasinscreed': 'img2/Juegos-inicio/Assassins creed(1).png',
+    'assasinscreed': 'img2/Juegos-inicio/Assassins creed(1).png',
     'gtaV' : 'img2/Juegos-inicio/gta.png', 
     'tomb raider' : 'img2/Juegos-inicio/tombraidergod.png',
 
@@ -17,7 +17,7 @@ const sinopsis = {
     'sparking': 'DRAGON BALL: Sparking! ZERO lleva a un nuevo nivel el legendario estilo de juego de la serie Budokai Tenkaichi. ¡Domina el poder destructivo de los luchadores más fuertes que han aparecido en Dragon Ball!',
     'silent hill': '«Me llamo... Maria», dice la mujer, sonriendo. Su rostro, su voz... Es igual que ella.',
     'god of war': 'Kratos god',
-    'Assasinscreed': 'Assasin Creed Valhalla',
+    'assasinscreed': 'Assasin Creed Valhalla',
     'gtaV' : 'gta v juegazo', 
     'tomb raider' : 'tomb raider',
 }
@@ -40,6 +40,10 @@ const requisitos = {
         rec: ['SO: Windows 10 x64', 'Procesador: Intel Core i7-8700K | AMD Ryzen 5 3600X', 'Gráficos: NVIDIA® GeForce® 2080RTX or AMD Radeon™ 6800XT']
     },
     'god of war': {
+        min: ['SO: Windows 10 64-bit', 'Procesador: Intel I5 4690 / AMD FX 8350', 'Gráficos: Nvidia GTX 970 / RX 480 (4GB+ of VRAM)'],
+        rec: ['SO: Windows 10 x64', 'Procesador: Intel Core i7-8700K | AMD Ryzen 5 3600X', 'Gráficos: NVIDIA® GeForce® 2080RTX or AMD Radeon™ 6800XT']
+    },
+    'assasinscreed': {
         min: ['SO: Windows 10 64-bit', 'Procesador: Intel I5 4690 / AMD FX 8350', 'Gráficos: Nvidia GTX 970 / RX 480 (4GB+ of VRAM)'],
         rec: ['SO: Windows 10 x64', 'Procesador: Intel Core i7-8700K | AMD Ryzen 5 3600X', 'Gráficos: NVIDIA® GeForce® 2080RTX or AMD Radeon™ 6800XT']
     },
@@ -71,7 +75,7 @@ const gameImage = {
         '/img2/Modal2fotos/God2.png',
         '/img2/Modal2fotos/god3.jpg'
     ],
-    'Assasinscreed': [
+    'assasinscreed': [
         '/img2/Modal2fotos/god1.jpg',
         '/img2/Modal2fotos/God2.png',
         '/img2/Modal2fotos/god3.jpg'
@@ -98,6 +102,15 @@ function showNextImage() {
 }
 setInterval(showNextImage, 3000); 
 
+let sumar = 0;
+function showNextImage2() {
+    const slides = document.querySelectorAll('.carousel-slide-oferta img');
+    const slideWidth = slides[0].clientWidth; // Obtener el ancho de la primera imagen
+    sumar = (sumar + 1) % slides.length;
+    document.querySelector('.carousel-slide-oferta').style.transform = `translateX(${-sumar * slideWidth}px)`;
+}
+
+setInterval(showNextImage, 3000); // Cambia de imagen cada 3 segundos
 /*Inicio del modal game */
 function showModal(game)  {
     const modal = document.getElementById('myModal');
@@ -147,11 +160,6 @@ function showModal(game)  {
 /*Funcion de busqueda  */
 function searchGame(){
     const input = document.getElementById('searchInput').value.toLowerCase();
-    const modal = document.getElementById('myModal');
-    const modalImage = document.getElementById('modalImage');
-    const modalSinopsis = document.getElementById('resumen');
-    const modalRequisitosMin = document.getElementById('requisitos-min-list');
-    const modalRequisitosRec = document.getElementById('requisitos-rec-list');
     if (games[input]) {
         showModal(input);
     }else {
@@ -173,22 +181,83 @@ function closeModalCuenta(){
     const modal = document.getElementById('myModalCuenta')
     modal.style.display = 'none';
 }
-function mostrarFormulario(tipo){
-    if (tipo == 'crear'){
-        window.location.href= '/html/registro.html'
-    }else if (tipo == 'login'){
-        window.location.href= '/html/login.html';
-    } 
-}
-let sumar = 0;
-/*fin de la funcion del registro y logeo de usuario*/
 
-function showNextImage() {
-    const slides = document.querySelectorAll('.carousel-slide-oferta img');
-    const slideWidth = slides[0].clientWidth; // Obtener el ancho de la primera imagen
-    sumar = (sumar + 1) % slides.length;
-    document.querySelector('.carousel-slide-oferta').style.transform = `translateX(${-sumar * slideWidth}px)`;
+function ShowmodalCalculadora(){
+    const modal = document.getElementById('ModalCalculadora')
+    modal.style.display = 'block';
+    document.addEventListener('keydown', manejarTeclado);
+}
+function closeModalCalculadora(){
+    const modal = document.getElementById('ModalCalculadora')
+    modal.style.display = 'none';
+    document.removeEventListener('keydown', manejarTeclado);
 }
 
-setInterval(showNextImage, 3000); // Cambia de imagen cada 3 segundos
+function iniciarSesion(event){
+    event.preventDefault();
+    
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const loginmessage = document.getElementById('loginMessage');
+    const iniciarButton = document.getElementById('iniciar');
+    
+    if (username === 'admin' && password === 'admin') {
+        loginmessage.textContent = 'Inicio Exitoso';
+        loginmessage.style.color = 'Green';
+        closeModalCuenta()
+        // Ocultar el botón de iniciar sesión
+        document.getElementById('iniciarusuario').style.display = 'none';
+        document.getElementById('calculadora').style.display = 'inline-block'
 
+        
+    } else {
+        loginmessage.textContent = 'Usuario o contraseña incorrectas';
+        loginmessage.style.color = 'Red';
+    }
+}
+
+//CALCULADORA 
+const botonBorrar = document.getElementById('borrar')
+const ingreso = document.getElementById('text')
+
+
+// Obtener el campo de texto y el formulario de la calculadora
+const input = document.getElementById('text');
+const form = document.forms['calculadora'];
+
+// Función para agregar el valor al campo de texto
+function agregarValor(valor) {
+    input.value += valor;
+}
+
+// Función para manejar el evento de teclas
+// Modificar la función manejarTeclado para evitar duplicación
+function manejarTeclado(event) {
+    const tecla = event.key;
+    
+    // Comprobamos si la tecla es un número o un operador
+    if ('0123456789'.includes(tecla)) {
+        agregarValor(tecla);
+    } else if (tecla === '+') {
+        agregarValor('+');
+    } else if (tecla === '-') {
+        agregarValor('-');
+    } else if (tecla === '*') {
+        agregarValor('*');
+    } else if (tecla === '/') {
+        agregarValor('/');
+    } else if (tecla === '.') {
+        agregarValor('.');
+    } else if (tecla === 'Backspace') {
+        input.value = input.value.slice(0, -1);
+    } else if (tecla === 'Enter') {
+        try {
+            input.value = eval(input.value);
+        } catch (error) {
+            input.value = 'Error';
+        }
+    } else if (tecla === 'Escape') {
+        input.value = '';
+    }
+    
+}
