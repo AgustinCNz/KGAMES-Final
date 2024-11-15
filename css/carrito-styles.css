@@ -1,0 +1,54 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product {
+    margin-bottom: 20px;
+}
+
+button.add-to-cart {
+    background-color: #781375;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button.add-to-cart:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.cart {
+    margin-top: 40px;
+}
+
+.cart ul {
+    list-style-type: none;
+    padding: 0;
+}
+.button-volver{
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: "Press Start 2P", cursive; 
+    
+    width: 180px;
+    height: 35px;
+    margin-top: 30px;
+    padding-top: 30px;
+}
