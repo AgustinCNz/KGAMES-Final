@@ -564,3 +564,48 @@ body{
         cursor: pointer;
     }
     /* FIN DE CALCULADORA */
+
+/* INICIO DE CARRITO */
+    #cart-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        max-height: 400px;
+        overflow-y: auto;
+    }
+    
+    /* Estilos para la lista de juegos en el carrito */
+    #cart-list {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    #cart-list li {
+        margin: 10px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    #cart-list button {
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 5px;
+        cursor: pointer;
+    }
+    
+    /* Botón de limpiar carrito */
+    #clear-cart {
+        background-color: #f44336;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+
+    /* FIN DE CARRITO */

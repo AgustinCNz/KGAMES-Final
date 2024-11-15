@@ -47,6 +47,15 @@ const requisitos = {
         min: ['SO: Windows 10 64-bit', 'Procesador: Intel I5 4690 / AMD FX 8350', 'Gráficos: Nvidia GTX 970 / RX 480 (4GB+ of VRAM)'],
         rec: ['SO: Windows 10 x64', 'Procesador: Intel Core i7-8700K | AMD Ryzen 5 3600X', 'Gráficos: NVIDIA® GeForce® 2080RTX or AMD Radeon™ 6800XT']
     },
+    'gtaV': {
+        min: ['SO: Windows 10 64-bit', 'Procesador: Intel I5 4690 / AMD FX 8350', 'Gráficos: Nvidia GTX 970 / RX 480 (4GB+ of VRAM)'],
+        rec: ['SO: Windows 10 x64', 'Procesador: Intel Core i7-8700K | AMD Ryzen 5 3600X', 'Gráficos: NVIDIA® GeForce® 2080RTX or AMD Radeon™ 6800XT']
+    },
+    'tomb raider': {
+        min: ['SO: Windows 10 64-bit', 'Procesador: Intel I5 4690 / AMD FX 8350', 'Gráficos: Nvidia GTX 970 / RX 480 (4GB+ of VRAM)'],
+        rec: ['SO: Windows 10 x64', 'Procesador: Intel Core i7-8700K | AMD Ryzen 5 3600X', 'Gráficos: NVIDIA® GeForce® 2080RTX or AMD Radeon™ 6800XT']
+    },
+
 };
 /*imagenes de los juegos*/
 const gameImage = {
@@ -261,3 +270,65 @@ function manejarTeclado(event) {
     }
     
 }
+
+
+
+// Lista que almacena los jueguitos
+let cart = [];
+
+// Función para agregar un juego al carrito
+function addToCart(gameName) {
+    // Evitar que se agregue el mismo juego más de una vez
+    if (!cart.includes(gameName)) {
+        cart.push(gameName);
+        updateCart();
+    } else {
+        alert(`${gameName} ya está en el carrito.`);
+    }
+}
+
+// Función para actualizar el carrito en la UI
+function updateCart() {
+    const cartList = document.getElementById("cart-list");
+    cartList.innerHTML = ''; // Limpiar la lista antes de actualizar
+
+    // Agregar cada juego del carrito a la lista HTML
+    cart.forEach((game) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = game;
+
+        // Crear un botón para eliminar el juego
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "Eliminar";
+        removeButton.onclick = () => removeFromCart(game);
+
+        listItem.appendChild(removeButton);
+        cartList.appendChild(listItem);
+    });
+}
+
+// Función para eliminar un juego del carrito
+function removeFromCart(gameName) {
+    cart = cart.filter((game) => game !== gameName); //elimina juego del carrito
+    updateCart(); 
+}
+
+// Función para limpiar todo el carrito
+function clearCart() {
+    cart = []; 
+    updateCart(); 
+}
+
+// Función para manejar el click en el botón "COMPRAR"
+function setupPurchaseButtons() {
+    const buyButtons = document.querySelectorAll('.boton-comprar');
+    buyButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            const gameName = event.target.closest('.JuegosPopulares2').querySelector('img').alt;
+            addToCart(gameName); // Agregar el juego al carrito
+        });
+    });
+}
+
+// Llamamos a esta función al cargar la página para asignar el evento a todos los botones
+window.onload = setupPurchaseButtons;
