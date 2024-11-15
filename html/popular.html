@@ -9,28 +9,6 @@
     <link rel="shortcut icon" href="/img/logo/k-games.png">
 </head>
 <body>
-    <!-- Esto es un boton ladetal no implementado todavia-->
-    <!-- <div class="container">
-        <div class="sidebar">
-            <h2>Categorías de Consolas</h2>
-            <a href="#ps4">PS4</a>
-            <a href="#ps5">PS5</a>
-            <a href="#xbox">XBOX</a>
-        </div>
-        <div class="content">
-            <h1>Bienvenido al Menú de Consolas</h1>
-            <button class="button">Mostrar Menú</button>
-        </div>
-    </div> -->
-    <!-- <nav>
-        <ul class="nav-categories">
-            <li><a href="#PS3">PS3</a></li>
-            <li><a href="#PS4">PS4</a></li>
-            <li><a href="#PS5">PS5</a></li>
-            <li><a href="#XBOX">XBOX</a></li>
-            <li><a href="#PC">PC</a></li>
-        </ul>
-    </nav> -->
     <div class="nav-bar"> 
         <img class="logo" src="/img/logo/k-games.png" alt=""> 
         <div class="search-container">
@@ -51,19 +29,16 @@
         <nav>
         </div>
     </div>
-    <!-- Sección de juegos PS3 -->
-    <!-- <section id="#PS3" class="JuegosPopulares">
-        <article>
-            <div class="card">
-                <img src="/img/juegos_ps5/2k25ps5.png" alt="Portada del juego 2K25 NBA">
-                <h2>2K 25 NBA</h2>
-                <p>Un juego esperado para muchos amantes de la NBA.</p>
-                <p class="price">$49,99</p>
-                <button>Añadir al carrito</button>
-            </div>
-        </article>
 
-    </section> -->
+    <div id="cart-container">
+        <h3>Carrito de Compras</h3>
+        <ul id="cart-list">
+            <!-- Los juegos comprados aparecerán aquí -->
+        </ul>
+        <button id="clear-cart" onclick="clearCart()">Limpiar Carrito</button>
+    </div>
+    
+   
     
     <!-- Sección de juegos PS4 -->
     <section id="#PS4" class="JuegosPopulares">
