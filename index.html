@@ -14,8 +14,25 @@
         <img class="logo" src="/img/logo/k-games.png" alt="Logo de K-GAMES"> 
             <div class="search-container">
                 <nav class="inicio">
-                    <a href="#" onclick="ShowModalCuenta()" class="usuario" id="iniciarusuario">Iniciar sesion</a>
                     <a href="#">Inicio</a>
+                    <div class="desplegable-tarea" id="tarea"> 
+                        <a href="#" class="dropdown-toggle-tarea">Tareas</a> 
+                        <div class="desplegable-content-tarea"> 
+                            <div class="tarea-item">
+                            <a href="#">Usar la calculadora</a> 
+                            <input type="checkbox" class="tarea-checkbox">
+                        </div>
+                        <div class="tarea-item">
+                            <a href="#">Revisar el carrito</a> 
+                            <input type="checkbox" class="tarea-checkbox">
+                        </div>
+                        <div class="tarea-item">
+                            <a href="#">Visitar las pestañas</a> 
+                            <input type="checkbox" class="tarea-checkbox">
+                        </div>
+                    </div> 
+                </div>
+                    <a href="#" onclick="ShowModalCuenta()" class="usuario" id="iniciarusuario">Iniciar sesion</a>
                     <a href="#" id="calculadora" onclick="ShowmodalCalculadora()">Calculadora</a>
                         <div class="dropdown">
                             <a href="/html/popular.html" class="dropdown-toggle">Juegos Populares</a>
@@ -23,7 +40,7 @@
                                     <div class="dropdown-submenu">
                                         <a href="#">Categorias</a>
                                             <div class="submenu-content">
-                                                <a href="#">Accion</a>
+                                                <a href="#">Accion</a> 
                                                 <a href="#">Deportes</a>
                                                 <a href="#">Aventuras</a>
                                             </div>
@@ -38,7 +55,6 @@
     </div>
     <!-- fin del navbar -->
     
- 
     <!---Modal para cuentas---->
     <div id="myModalCuenta" class="modal">
         <div class="modal-content">
@@ -64,19 +80,19 @@
     <div class="container">
     <!---Baldurs gate 3-->
     <div class="JuegosPopulares2" id="gameContainer">
-    <img  src="https://images.g2a.com/300x400/1x1x1/baldurs-gate-3-pc-steam-account-account-global-i10000206664009/5f1edcea7e696c555533dfa2" alt="Baldurs gate" class="game" onclick="showModal('baldurs')">
+    <img id="imagen" src="https://images.g2a.com/300x400/1x1x1/baldurs-gate-3-pc-steam-account-account-global-i10000206664009/5f1edcea7e696c555533dfa2" alt="Baldurs gate" class="game" onclick="showModal('baldurs')">
     <a href="#" class="boton-comprar">COMPRAR</a>
     </div>
     <!-- juegos -->
     <!---Sonic-->
     <div class="JuegosPopulares2" id="gameContainer">
-    <img src="https://images.g2a.com/300x400/1x1x1/sonic-x-shadow-generations-pc-steam-account-global-i10000507672002/22290998e8d9421ea1481823" alt="sonic generation" class="game" onclick="showModal('sonic')">
+    <img id="imagen" src="https://images.g2a.com/300x400/1x1x1/sonic-x-shadow-generations-pc-steam-account-global-i10000507672002/22290998e8d9421ea1481823" alt="sonic generation" class="game" onclick="showModal('sonic')">
     <a href="#" class="boton-comprar">COMPRAR</a>
     </div>
     <!-- juegos -->
     <!---Sparking zero-->
     <div class="JuegosPopulares2" id="gameContainer">
-        <img src="https://images.g2a.com/300x400/1x1x1/dragon-ball-sparking-zero-pc-steam-account-global-i10000506157007/302aae41117241c89dc0c949" alt="Sparking Zero" class="game" onclick="showModal('sparking')">
+        <img id="imagen" src="https://images.g2a.com/300x400/1x1x1/dragon-ball-sparking-zero-pc-steam-account-global-i10000506157007/302aae41117241c89dc0c949" alt="Sparking Zero" class="game" onclick="showModal('sparking')">
         <a href="#" class="boton-comprar">COMPRAR</a>
         </div>
     <!---Silent Hill--->

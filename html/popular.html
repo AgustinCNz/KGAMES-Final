@@ -17,9 +17,23 @@
                 <div class="dropdown"> 
                     <a href="#" class="dropdown-toggle">Categoría</a> 
                     <div class="dropdown-content"> 
-                        <a href="/categorias/aventura.html">Aventura</a> 
-                        <a href="/categorias/accion.html">Acción</a> 
-                        <a href="/categorias/deporte.html">Deporte</a> 
+                        <a href="#">Aventura</a> 
+                        <a href="#">Acción</a> 
+                        <a href="#">Deporte</a> 
+                    </div> 
+                </div>
+                <div class="dropdown"> 
+                    <a href="#" class="dropdown-toggle">Carrito</a> 
+                    <div class="dropdown-content"> 
+                        <div id="cart-container">
+                            <h3>Carrito de Compras</h3>
+                            <ul id="cart-list">
+                                <!-- Los juegos comprados aparecerán aquí -->
+                            </ul>
+                            <p><strong>Total: </strong><span id="total-price">$0.00</span></p>
+                            <button id="clear-cart" onclick="clearCart()">Finalizar Compra</button>
+                            <button id="clear-cart" onclick="clearCart()">Limpiar Carrito</button>
+                        </div>
                     </div> 
                 </div>
                 <a href="/HTML/nosotros.html">Sobre Nosotros</a>
@@ -29,15 +43,6 @@
         </div>
     </div>
 
-    <!-- Carrito de Compras -->
-    <div id="cart-container">
-        <h3>Carrito de Compras</h3>
-        <ul id="cart-list">
-            <!-- Los juegos comprados aparecerán aquí -->
-        </ul>
-        <p><strong>Total: </strong><span id="total-price">$0.00</span></p>
-        <button id="clear-cart" onclick="clearCart()">Limpiar Carrito</button>
-    </div>
     
     <!-- Sección de juegos PS4 -->
     <section id="#PS4" class="JuegosPopulares">

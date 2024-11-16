@@ -216,8 +216,8 @@ function iniciarSesion(event){
         closeModalCuenta()
         // Ocultar el botón de iniciar sesión
         document.getElementById('iniciarusuario').style.display = 'none';
-        document.getElementById('calculadora').style.display = 'inline-block'
-
+        document.getElementById('calculadora').style.display = 'inline-block';
+        document.getElementById('tarea').style.display = 'inline-block';
         
     } else {
         loginmessage.textContent = 'Usuario o contraseña incorrectas';
