@@ -5,9 +5,9 @@ const games = {
     'sparking':'https://images.g2a.com/300x400/1x1x1/dragon-ball-sparking-zero-pc-steam-account-global-i10000506157007/302aae41117241c89dc0c949',
     'silent hill': 'https://images.g2a.com/300x400/1x1x1/silent-hill-2-pc-steam-key-global-i10000506161001/9a54fc95bde246389705df2d',
     'god of war': 'img2/Modal2/godmodal2.png',
-    'assasinscreed': 'img2/Juegos-inicio/Assassins creed(1).png',
-    'gtaV' : 'img2/Juegos-inicio/gta.png', 
-    'tomb raider' : 'img2/Juegos-inicio/tombraidergod.png',
+    'assasinscreed': 'img2/Modal2/assassinscreed.png',
+    'gtav' : 'img2/Modal2/gtav.png', 
+    'tomb raider' : 'img2/Modal2/tombraider.png',
 
 };
 /*juego 2*/
@@ -18,7 +18,7 @@ const sinopsis = {
     'silent hill': '«Me llamo... Maria», dice la mujer, sonriendo. Su rostro, su voz... Es igual que ella.',
     'god of war': 'Kratos god',
     'assasinscreed': 'Assasin Creed Valhalla',
-    'gtaV' : 'gta v juegazo', 
+    'gtav' : 'gta v juegazo', 
     'tomb raider' : 'tomb raider',
 }
 /* reqiosotps de los 4 juegos */
@@ -47,7 +47,7 @@ const requisitos = {
         min: ['SO: Windows 10 64-bit', 'Procesador: Intel I5 4690 / AMD FX 8350', 'Gráficos: Nvidia GTX 970 / RX 480 (4GB+ of VRAM)'],
         rec: ['SO: Windows 10 x64', 'Procesador: Intel Core i7-8700K | AMD Ryzen 5 3600X', 'Gráficos: NVIDIA® GeForce® 2080RTX or AMD Radeon™ 6800XT']
     },
-    'gtaV': {
+    'gtav': {
         min: ['SO: Windows 10 64-bit', 'Procesador: Intel I5 4690 / AMD FX 8350', 'Gráficos: Nvidia GTX 970 / RX 480 (4GB+ of VRAM)'],
         rec: ['SO: Windows 10 x64', 'Procesador: Intel Core i7-8700K | AMD Ryzen 5 3600X', 'Gráficos: NVIDIA® GeForce® 2080RTX or AMD Radeon™ 6800XT']
     },
@@ -85,19 +85,19 @@ const gameImage = {
         '/img2/Modal2fotos/god3.jpg'
     ],
     'assasinscreed': [
-        '/img2/Modal2fotos/god1.jpg',
-        '/img2/Modal2fotos/God2.png',
-        '/img2/Modal2fotos/god3.jpg'
+        '/img2/Modal2fotos/AC1.jpg',
+        '/img2/Modal2fotos/AC2.jpg',
+        '/img2/Modal2fotos/AC3.jpg'
     ],
-    'gtaV': [
-        '/img2/Modal2fotos/god1.jpg',
-        '/img2/Modal2fotos/God2.png',
-        '/img2/Modal2fotos/god3.jpg'
+    'gtav': [
+        '/img2/Modal2fotos/gta1.jpg',
+        '/img2/Modal2fotos/gta2.jpg',
+        '/img2/Modal2fotos/gta3.jpg'
     ],
     'tomb raider': [
-        '/img2/Modal2fotos/god1.jpg',
-        '/img2/Modal2fotos/God2.png',
-        '/img2/Modal2fotos/god3.jpg'
+        '/img2/Modal2fotos/tombraider1.jpg',
+        '/img2/Modal2fotos/tombraider2.jpg',
+        '/img2/Modal2fotos/tombraider3.jpg'
     ],
 }
 /* fin de las imagenes de los juegos*/
