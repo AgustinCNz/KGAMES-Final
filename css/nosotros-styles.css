@@ -1,0 +1,536 @@
+
+:root{
+    --white-alpha-color: rgba(224, 219, 217, 0.493);
+    --gray-dark-color: #666;
+    --first-color: #00ff00;
+    --first-alpha-color: rgba(217, 0, 98 , 0.75);
+    --second-color: #14192d;
+    --second-alpha-color: rgba(20, 25, 45, 0.75);
+  
+    --white-color: #fff;
+    --gray-light-color: #f3f3f3;
+    --gray-color: #ccc;
+    --gray-dark-color: #666;
+    --black-color: #000;
+   
+
+    --white-alpha-color: rgba(255, 255, 255, 0.5);
+    --black-alpha-color: rgba(0,0,0,0.5);  
+}
+html{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth;
+
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+    overflow-x: hidden;
+    color: #222;
+}
+
+    .logo{
+        opacity: 1.0;
+        height: 79px;
+        margin-right: auto;
+    }
+
+    a{
+        padding: 2px;
+        border-radius: 5px;
+        text-decoration: none;
+        color: white;
+    }
+    
+    h3{
+        margin: 0;
+        font-size: 1.25rem;
+    }
+    
+    h4{
+        margin: 0;
+        font-size: 1rem;
+    }
+    
+    h5{
+        margin: 0;
+        font-size: 0.85rem;
+    }
+    
+    h6{
+        margin: 0;
+        font-size: 0.70rem;
+    }
+    
+    
+    /****************NavBar***************/
+    .nav-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #162447;
+        padding: 10px 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .logo {
+        width: 50px;
+        height: auto;
+    }
+    
+    .search-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .search-bar {
+        padding: 8px;
+        border: 2px solid #e43f5a;
+        border-radius: 4px;
+        background-color: #1b1b3a;
+        color: #ffffff;
+    }
+    
+    .search-bar::placeholder {
+        color: #9a9a9a;
+    }
+    
+    .search-button {
+        background-color: #e43f5a;
+        border: none;
+        color: #ffffff;
+        padding: 8px 16px;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+    
+    .search-button:hover {
+        background-color: #d32f5a;
+    }
+    
+    nav a {
+        color: #ffffff;
+        text-decoration: none;
+        margin: 0 15px;
+        transition: color 0.3s;
+    }
+    
+    nav a:hover {
+        color: #e43f5a;
+    }
+
+
+/****************************/
+    
+ /***********section Nosotros*****/
+ .Nosotros{
+    display: grid;
+    grid-template-columns: auto;
+    gap: 50px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+   /* max-width: 64rem;*/
+ }
+
+ blockquote {
+    font-size: 1rem;
+    margin: 0 auto; /* Centra el bloque */
+    padding: 1rem; /* Añade espacio interno */
+    line-height: 1.5; /* Mejora la legibilidad */
+    max-width: 80%; /* Limita el ancho para que no sea más grande que el slide */
+    box-sizing: border-box; /* Evita que el relleno y el margen desborden */
+}
+
+
+@keyframes carousel-slide {
+    0%{
+        transform: translateX(0%);
+    }
+    25%{
+        transform: translateX(-25%);
+    }
+    50%{
+        transform: translateX(-50%);
+    }
+    75%{
+        transform: translateX(-75%);
+    }
+}
+
+.carousel{
+    margin: 2rem auto;
+    padding: 2rem 0;
+    max-width: 800px;
+    text-align: center;
+    background-color: var(--carousel-bg-color);
+    overflow-x: hidden;
+}
+
+/*por cada slide que tenga el carousel tengo q sumarle 100% al ancho*/
+.carousel .slides{
+    padding-left:0 ;
+    width: 400%;
+    display: flex;
+    list-style: none;
+    overflow-x: hidden;
+    transition: transform 0.5s ease-in-out;
+    animation: carousel-slide 24s ease-in-out 0.7s;
+}
+
+#slide-1:checked ~ .slides{
+    transform: translateX(0%);
+}
+
+#slide-2:checked ~ .slides{
+    transform: translateX(-25%);
+}
+
+#slide-3:checked ~ .slides{
+    transform: translateX(-50%);
+}
+
+#slide-4:checked ~ .slides{
+    transform: translateX(-75%);
+}
+
+#slide-1:checked ~ .slide-nav label#dot-1,
+#slide-2:checked ~ .slide-nav label#dot-2,
+#slide-3:checked ~ .slide-nav label#dot-3,
+#slide-4:checked ~ .slide-nav label#dot-4
+{
+    background-color: var(--gray-dark-color);
+}
+.carousel input{
+    display: none;
+}
+
+.carousel label{
+    border: medium solid var(--gray-dark-color);
+    border-radius: 50%;
+    margin: 0 0.75rem;
+    display: inline-block;
+    width: 0.75rem ;
+    height: 0.75rem;
+    cursor: pointer;
+}
+
+.hero-image{
+    background-image:var(--hero-image) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: var(--hero-attachment);/*efecto paralax */
+    
+}
+
+.hero-image-opacity{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--hero-opacity-color);
+}
+.avatar{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+
+/***********FORMULARIO**************/
+
+.contact-form{
+    margin: 2rem auto;
+    padding: 1rem;
+    max-width: 800px;
+}
+
+.contact-form >*{
+    padding: 0.5rem;
+    margin: 1rem auto;
+    display: block;
+    width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea{
+    font-size: 0.85rem;
+    font-family: sans-serif;
+}
+
+.contact-form input{
+    border: 0;
+    padding-left: 0;
+    border-bottom: thin solid var(--gray-dark-color);
+}
+
+.contact-form textarea{
+    border: thin solid var(--gray-dark-color);
+    resize: none;
+}
+
+.contact-form input [type="submit"]{
+ margin-top: 0;
+ cursor: pointer;
+ transition: all 00.5s ease-in-out;
+}
+
+.contact-form input[type="submit"]:hover{
+    opacity: 0.75;
+}
+
+.contact-form > ::placeholder{
+    color: var(--gray-dark-color);
+}
+
+.modal#gracias:target{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.contact-form .response{
+    padding: 1rem;
+    width: 400px;
+    text-align: center;
+    background-color: var(--white-color);
+}
+
+.contact-form .response svg{
+    margin-top: 2rem;
+    width: 4rem;
+    height: 4rem;
+    fill: var(--first-color);
+}
+
+.btn{
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    display: inline-block;
+    width: 8.5rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: var(--white-color);
+    background-color: var(--first-color);
+   
+}
+
+/*******TARJETA DE CONTACTO ********/
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 64rem ;
+}
+
+.contact-card{
+    margin: 1rem auto;
+    padding: 1rem;
+    width: 100%;
+    height: 144px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact-card > svg{
+    fill: #00ff00;
+    width: 2rem;
+    height: 2rem;
+}
+
+.contact-card > small{
+    margin-top: -1rem;
+}
+
+.contact-card a {
+    text-decoration: none;
+}
+.social-media a {
+    text-decoration: none;
+    padding: 0 0.4rem;
+}
+
+.social-media svg{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/****************MODAL***********/
+
+.modal2{
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black-alpha-color);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 1s;
+}
+
+.modal-content{
+    position: relative;
+    background-color: var(--white-color);
+}
+
+.modal-close{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.modal-close svg{
+    width: 3rem;
+    height: 3rem;
+    fill: var(--first-color);
+}
+
+.none{
+    display: none;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.box-shadow-1{
+    box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+.txt{
+    text-align: justify;
+    margin-left: 15px;
+    margin-right: 15px;
+   }
+
+  .responsive{
+    width: 100%;
+    height: auto;
+   margin-top: 3rem;
+  } 
+.responsive img{
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    align-items: center;
+}
+
+
+
+@media screen and (min-width: 768px){
+
+  .item{
+    margin: 0 2rem 0 2rem;
+  }
+    .section-title{
+        grid-column: span 2;
+    }
+    
+      .contact-cards{
+          display: grid;
+          grid-template-columns: repeat(2, 48%);
+          justify-content: space-between;
+      }
+
+      .contact-cards .contact-card:nth-child(5){
+        grid-column: span 2;
+      }
+
+      .contact-cards iframe {
+        grid-row: 1/2;
+        grid-column: 2/3;
+       width: inherit;
+        height: inherit;
+      }
+  
+      .Nosotros{
+        height: 90vh;
+        grid-template-columns: repeat(2, 48%);
+        margin-bottom: 8rem;
+      }
+    
+      .Nosotros .item:nth-child(3){
+        grid-column: span 2;
+      }
+
+      
+  }
+  
+
+@media screen and (min-width: 1024px){
+
+    .section-title{
+        border-top: thin solid var(--first-color);
+        border-bottom: thin solid var(--first-color);
+        margin: 2rem auto;
+        padding: .5rem 1rem;
+        width: 15rem;
+        text-align: center;
+        color: var(--title-color);
+    }
+    
+    .contact-cards{
+        grid-template-columns: repeat(2, 50%);
+        gap: 2rem;
+    }
+
+    .contact-cards .contact-card:nth-child(2){
+       grid-row: 1/2;
+       grid-column: 1/3;
+    }
+
+    .contact-cards .contact-card:nth-child(5){
+        grid-row:3/4 ;
+        grid-column: 2/3 ;
+    }
+
+    .contact-form{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea{
+        font-size: 1rem;
+    }
+
+    .contact-form-loader,
+    .contact-form textarea{
+        grid-column: span 2;
+    }
+
+    .contact-form input[type="submit"]{
+        margin-left: 0;
+    }
+    
+    .Nosotros{
+        height: 90vh;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .Nosotros .item:nth-child(3){
+        grid-row: 1/2;
+        grid-column: 3/4;
+        
+      }
+
+     
+}
