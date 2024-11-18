@@ -209,7 +209,7 @@ nav a:hover {
     /* Contenedor del carrito */
 #cart-container {
     position: fixed;
-    top: 20px;
+    top: 10px;
     right: 20px;
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
@@ -253,7 +253,7 @@ nav a:hover {
 /* INICIO DE CARRITO */
 #cart-container {
     position: fixed;
-    top: 20px;
+    top: 40px;
     right: 20px;
     background-color: rgba(0, 0, 0, 0.7);
     color: white;

@@ -48,6 +48,24 @@
                                 </div>
                         </div>
                     <a href="/html/nosotros.html">Sobre Nosotros</a>
+                    
+                    <!---CARRITO--->
+                    <div class="dropdown"> 
+                        <a href="#" class="dropdown-toggle">Carrito</a> 
+                        <div class="dropdown-content"> 
+                            <div id="cart-container">
+                                <h3>Carrito de Compras</h3>
+                                <ul id="cart-list">
+                                    <!-- Los juegos comprados aparecerán aquí -->
+                                </ul>
+                                <p><strong>Total: </strong><span id="total-price">$0.00</span></p>
+                                <button id="clear-cart" onclick="clearCart()">Finalizar Compra</button>
+                                <button id="clear-cart" onclick="clearCart()">Limpiar Carrito</button>
+                            </div>
+                        </div> 
+                    </div>
+                    <!----FIN CARRITO---->
+                    
                     <input type="text" placeholder="Buscar..." class="search-bar" id="searchInput"> 
                     <button class="search-button" onclick="searchGame()">🔍</button>
                 </nav>
@@ -81,25 +99,29 @@
     <!---Baldurs gate 3-->
     <div class="JuegosPopulares2" id="gameContainer">
     <img id="imagen" src="https://images.g2a.com/300x400/1x1x1/baldurs-gate-3-pc-steam-account-account-global-i10000206664009/5f1edcea7e696c555533dfa2" alt="Baldurs gate" class="game" onclick="showModal('baldurs')">
-    <a href="#" class="boton-comprar">COMPRAR</a>
+    <p class="price" data-price="140.99">$140.99</p>
+    <button onclick="addToCart('BALDURS GATE 3', 140.99)" class="boton-comprar">Añadir al carrito</button>
     </div>
     <!-- juegos -->
     <!---Sonic-->
     <div class="JuegosPopulares2" id="gameContainer">
     <img id="imagen" src="https://images.g2a.com/300x400/1x1x1/sonic-x-shadow-generations-pc-steam-account-global-i10000507672002/22290998e8d9421ea1481823" alt="sonic generation" class="game" onclick="showModal('sonic')">
-    <a href="#" class="boton-comprar">COMPRAR</a>
+    <p class="price" data-price="150.20">$150.20</p>
+    <button onclick="addToCart('SONIC X SHADOW GENERATIONS', 150.20)" class="boton-comprar">Añadir al carrito</button>
     </div>
     <!-- juegos -->
     <!---Sparking zero-->
     <div class="JuegosPopulares2" id="gameContainer">
         <img id="imagen" src="https://images.g2a.com/300x400/1x1x1/dragon-ball-sparking-zero-pc-steam-account-global-i10000506157007/302aae41117241c89dc0c949" alt="Sparking Zero" class="game" onclick="showModal('sparking')">
-        <a href="#" class="boton-comprar">COMPRAR</a>
+        <p class="price" data-price="120.29">$120.29</p>
+        <button onclick="addToCart('DRAGON BALL SPARKING ZERO', 120.29)" class="boton-comprar">Añadir al carrito</button>
         </div>
     <!---Silent Hill--->
     <!-- juegos -->
     <div class="JuegosPopulares2" id="gameContainer">
         <img src="https://images.g2a.com/300x400/1x1x1/silent-hill-2-pc-steam-key-global-i10000506161001/9a54fc95bde246389705df2d" alt="Silent Hill" class="game" onclick="showModal('silent hill')">
-        <a href="#" class="boton-comprar">COMPRAR</a>
+        <p class="price" data-price="110.19">$110.19</p>
+        <button onclick="addToCart('SILENT HILL', 110.19)" class="boton-comprar">Añadir al carrito</button>
         </div>
 </div>
 <!-- juegos -->
@@ -111,7 +133,8 @@
     <article >
         <div>
             <img  src="https://i.3djuegos.com/juegos/17544/god_of_war_ragnarok/fotos/ficha/god_of_war_ragnarok-5732816.jpg" alt="god of war" class="game" onclick="showModal('god of war')">
-            <a href="#" class="boton-comprar">COMPRAR</a>
+            <p class="price" data-price="40.59">$40.59</p>
+            <button onclick="addToCart('GOD OF WAR RAGNAROK', 40.59)" class="boton-comprar2">Añadir al carrito</button>
         </div>
     </article>
 
@@ -119,7 +142,8 @@
     <article>
         <div>
             <img src="/img2/Juegos-inicio/Assassins creed(1).png" alt="Assassins creed" class="game" onclick="showModal('assasinscreed')">
-            <a href="#" class="boton-comprar2">COMPRAR</a>
+            <p class="price" data-price="30.40">$30.40</p>
+            <button onclick="addToCart('ASSASSINS CREED VALHALLA', 30.40)" class="boton-comprar2">Añadir al carrito</button>
         </div>
     </article>
 
@@ -127,7 +151,8 @@
     <article>
         <div>
             <img src="/img2/Juegos-inicio/gta.png" alt="GTA" class="game" class="game" onclick="showModal('gtav')">
-            <a href="#" class="boton-comprar2">COMPRAR</a>
+            <p class="price" data-price="40.99">$40.99</p>
+            <button onclick="addToCart('GTA V', 40.99)" class="boton-comprar2">Añadir al carrito</button>
         </div>
     </article>
 
@@ -135,7 +160,8 @@
     <article>
         <div>
             <img src="/img2/Juegos-inicio/tombraidergod.png" alt="Tomb Raider" class="game" class="game" onclick="showModal('tomb raider')">
-            <a href="#" class="boton-comprar2">COMPRAR</a>
+            <p class="price" data-price="125.20">$125.20</p>
+            <button onclick="addToCart('TOMB RAIDER', 125.20)" class="boton-comprar2">Añadir al carrito</button>
         </div>
     </article>
 
@@ -239,6 +265,7 @@
                             <p>&copy; 2024 K-GAMES. Todos los derechos reservados.</p>
                     </div>
     </footer>
+    <script src="/JavaScript/popular-logic.js"></script>
     <script src="/logic.js"></script>
 
 </body>
