@@ -97,6 +97,7 @@ body{
         transition: all 0.3s ease-in-out;
     }
     
+    
     .logo{
         opacity: 1.0;
         height: 79px;
@@ -148,7 +149,9 @@ body{
     }
     
     
+    /* BARRA DE NAVEGACION RESPONSIVE*/
     
+    /*FIN DE BARRA DE NAVEGACION RESPONSIVE*/
     
     .modal{
         display: none;
