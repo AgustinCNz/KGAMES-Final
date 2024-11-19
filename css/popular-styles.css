@@ -120,6 +120,87 @@ nav a:hover {
     background-color: #d32f5a;
 }
 
+/*boton hamburguesa*/
+/* Ocultar el menú en pantallas pequeñas por defecto */
+.inicio {
+    display: none;
+    flex-direction: column; /* Para que los elementos se apilen en vertical */
+    background-color: #162447;
+    position: absolute;
+    top: 60px; /* Ajustar según el tamaño del navbar */
+    right: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 1000;
+}
+
+/* Mostrar el menú cuando se activa */
+.inicio.active {
+    display: flex;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Mostrar el botón de menú en pantallas pequeñas */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .search-container {
+        flex: 1;
+    }
+
+    .logo {
+        margin-right: auto;
+    }
+}
+
+/*boton hamburguesa*/
+/*Menu para celulares*/
+/* Ocultar el menú en dispositivos móviles por defecto */
+.inicio {
+    display: none;
+    flex-direction: column;
+    background-color: #162447;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 1000;
+}
+
+/* Mostrar el menú en dispositivos de tamaño normal (tabletas y más grandes) */
+@media (min-width: 769px) {
+    .inicio {
+        display: flex; /* Asegura que el menú se muestre en dispositivos grandes */
+        flex-direction: row; /* Ajusta la dirección para que los elementos se alineen horizontalmente */
+        position: static; /* Remueve el posicionamiento absoluto */
+        width: auto; /* Ajusta el ancho */
+        padding: 0; /* Remueve el padding adicional */
+    }
+
+    .menu-toggle {
+        display: none; /* Oculta el botón de menú en dispositivos grandes */
+    }
+}
+
+/* Mostrar el botón de menú solo en pantallas pequeñas */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/*fin del Menu para celulares*/
 /* INICIO DE FOOTER*/
 .footer {
     background-color: #333;

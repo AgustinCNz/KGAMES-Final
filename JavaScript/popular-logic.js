@@ -63,3 +63,9 @@ function clearCart() {
     // Actualizar la visualización del carrito
     updateCart();
 }
+
+/*boton hamburguesa*/
+function toggleMenu() {
+    const nav = document.querySelector('.inicio');
+    nav.classList.toggle('active');
+}
