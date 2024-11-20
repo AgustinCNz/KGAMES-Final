@@ -272,4 +272,52 @@ function manejarTeclado(event) {
 }
 
 
+function toggleMenu() {
+    const nav = document.querySelector('.inicio');
+    nav.classList.toggle('active');
+}
 
+/*TAREAS */
+document.addEventListener("DOMContentLoaded", () => {
+    const tareaForm = document.getElementById("tareaForm");
+    const nuevaTareaInput = document.getElementById("nuevaTarea");
+    const listaTareas = document.getElementById("listaTareas");
+
+    // Función para agregar una nueva tarea
+    tareaForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const nuevaTareaText = nuevaTareaInput.value.trim();
+        if (nuevaTareaText) {
+            const tareaItem = document.createElement("div");
+            tareaItem.classList.add("tarea-item");
+            tareaItem.innerHTML = `
+                <a href="#">${nuevaTareaText}</a>
+                <input type="checkbox" class="tarea-checkbox">
+            `;
+            listaTareas.appendChild(tareaItem);
+            nuevaTareaInput.value = "";
+            agregarEventListeners();
+        }
+    });
+
+    // Función para agregar event listeners a las casillas de verificación
+    function agregarEventListeners() {
+        const checkboxes = document.querySelectorAll('.tarea-checkbox');
+        checkboxes.forEach(checkbox => {
+            checkbox.removeEventListener('click', eliminarTarea); // Eliminar event listeners anteriores para evitar duplicados
+            checkbox.addEventListener('click', eliminarTarea);
+        });
+    }
+
+    // Función para eliminar una tarea completada
+    function eliminarTarea(event) {
+        const tareaItem = event.target.closest('.tarea-item');
+        if (event.target.checked) {
+            listaTareas.removeChild(tareaItem);
+        }
+    }
+
+    // Agregar event listeners a las casillas de verificación existentes
+    agregarEventListeners();
+});
+/*FIN TAREAS*/
