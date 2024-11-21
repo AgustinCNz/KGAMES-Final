@@ -3,6 +3,7 @@ body{
     margin: 0;
     padding: 0;
     background: url(https://i.pinimg.com/564x/91/c3/6e/91c36ebeccbc439e5b889b0d8cb9032a.jpg);
+    background-repeat: no-repeat;
     height: 100%;
     width: 100%;
     background-position: center;
@@ -674,7 +675,6 @@ section{
 }
 /* FIN DE CARRITO */
 
-<<<<<<< HEAD
 @media (max-width: 768px) {
     .modal {
         max-width: 80% ;
@@ -690,147 +690,3 @@ section{
     
    }
 }
-=======
-
-
-.inicio {
-    display: none;
-    flex-direction: column; /* Para que los elementos se apilen en vertical */
-    background: url(https://i.pinimg.com/564x/91/c3/6e/91c36ebeccbc439e5b889b0d8cb9032a.jpg);
-    position: absolute;
-    top: 60px; /* Ajustar según el tamaño del navbar */
-    right: 0;
-    width: 100%;
-    padding: 20px;
-    z-index: 1000;
-}
-
-/* Mostrar el menú cuando se activa */
-.inicio.active {
-    display: flex;
-}
-
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: #ffffff;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-/* Mostrar el botón de menú en pantallas pequeñas */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    .search-container {
-        flex: 1;
-    }
-    .logo {
-        margin-right: auto;
-    }
-}
-
-/*boton hamburguesa*/
-/*Menu para celulares*/
-/* Ocultar el menú en dispositivos móviles por defecto */
-.inicio {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    right: 0;
-    width: 100%;
-    padding: 0px;
-    z-index: 1000;
-}
-
-/* Mostrar el menú en dispositivos de tamaño normal (tabletas y más grandes) */
-@media (min-width: 769px) {
-    .inicio {
-        display: flex; /* Asegura que el menú se muestre en dispositivos grandes */
-        flex-direction: row; /* Ajusta la dirección para que los elementos se alineen horizontalmente */
-        position: static; /* Remueve el posicionamiento absoluto */
-        width: auto; /* Ajusta el ancho */
-        padding: 0; /* Remueve el padding adicional */
-    }
-
-    .menu-toggle {
-        display: none; /* Oculta el botón de menú en dispositivos grandes */
-    }
-}
-
-/* Mostrar el botón de menú solo en pantallas pequeñas */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-}
-
-/* TAREAS */
-
-#tarea {
-    display: none;
-}
-
-.desplegable-tarea { 
-    position: relative; 
-    display: inline-block; 
-} 
-
-.desplegable-content-tarea { 
-    display: none; 
-    position: absolute; 
-    background-color: #162447;
-    min-width: 160px; 
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
-    z-index: 1; 
-} 
-
-.desplegable-content-tarea form {
-    display: flex;
-    padding: 10px;
-}
-
-.desplegable-content-tarea input[type="text"] {
-    flex-grow: 1;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
-
-.desplegable-content-tarea button {
-    padding: 5px 10px;
-    border: none;
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-}
-
-.desplegable-content-tarea button:hover {
-    background-color: #45a049;
-}
-
-.desplegable-content-tarea .tarea-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 16px;
-}
-
-.desplegable-content-tarea .tarea-item a {
-    color: white; 
-    text-decoration: none; 
-    display: block; 
-}
-
-.tarea-checkbox {
-    margin-left: auto;
-}
-
-.desplegable-tarea:hover .desplegable-content-tarea { 
-    display: block; 
-}
-/* FIN DE TAREAS */
->>>>>>> 734144e54229b333536dfaeca9a3f7f735b57df1

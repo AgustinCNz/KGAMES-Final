@@ -1,0 +1,214 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fafa;
+    color: #fafafa;
+  }
+  
+  /* Header y Navbar */
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #202020;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .navbar > .navbar-logo img {
+    max-width: 20px;
+    height: auto;
+    display: block;
+    margin: 0;
+    object-fit: contain;
+  }
+  
+  .navbar > .navbar-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-menu > li {
+    margin: 0 15px;
+  }
+  
+  .navbar-menu > li > a {
+    text-decoration: none;
+    color: #fafafa;
+    font-size: 26px;
+    transition: color 0.3s;
+  }
+  
+  .navbar-menu > li > a:hover {
+    color: #f2c94c;
+  }
+  
+  /* Barra de búsqueda y botones */
+  .navbar-actions {
+    display: flex;
+    align-items: center ;
+    gap: 10px;
+    padding-right: 40px;
+  }
+  
+  .navbar-actions > .search-bar {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #303030;
+    color: #fafafa;
+  }
+  
+  .navbar-actions > .search-bar::placeholder {
+    color: #aaa;
+  }
+  
+  .navbar-actions > .btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .navbar-actions > .btn.login-btn {
+    background-color: transparent;
+    color: #fafafa;
+    border: 1px solid #fafafae6;
+  }
+  
+  .navbar-actions > .btn.signup-btn {
+    background-color: #f2c94c;
+    color: black;
+    border: none;
+  }
+  
+  .navbar-actions > .btn.signup-btn:hover {
+    background-color: #d1a836;
+  }
+  
+  /* Botón hamburguesa */
+  .menu-toggle {
+    position: fixed;
+    top: 25px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 0;
+    z-index: 1000;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+  }
+  
+  .menu-toggle span {
+    display: block;
+    background-color: #fafafa;
+    height: 3px;
+    width: 100%;
+    border-radius: 2px;
+    position: absolute;
+    transition: transform 0.3s ease, opacity 0.3s ease, top 0.3s ease;
+  }
+  
+  .menu-toggle span:nth-child(1) {
+    top: 0;
+  }
+  
+  .menu-toggle span:nth-child(2) {
+    top: 10px;
+  }
+  
+  .menu-toggle span:nth-child(3) {
+    top: 20px;
+  }
+  
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 10px;
+  }
+  
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 10px;
+  }
+  
+  /* Menú desplegable */
+  .menu-toggle + .navbar-menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #202020;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    padding: 10px 0;
+    z-index: 999;
+    display: none;
+  }
+  
+  .menu-toggle + .navbar-menu.active {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .menu-toggle + .navbar-menu > li {
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 10px;
+    }
+  
+    .navbar > .navbar-logo {
+      margin-bottom: 10px;
+    }
+  
+    .menu-toggle + .navbar-menu {
+      width: 100%;
+    }
+  
+    .navbar-actions {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .navbar-actions > .search-bar {
+      width: 90%;
+    }
+  
+    .navbar-actions > .btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .navbar {
+      padding: 5px 10px;
+    }
+  
+    .menu-toggle + .navbar-menu {
+      top: 50px;
+      right: 10px;
+      width: calc(100% - 20px);
+    }
+  
+    .navbar-actions > .btn {
+      font-size: 12px;
+      padding: 6px;
+    }
+  }
+  
