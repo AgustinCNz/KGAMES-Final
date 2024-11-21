@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="shortcut icon" href="/img/logo/k-games.png">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-GAMES - Admin</title>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <header>
+        <nav class="navbar" role="navigation" arial-label="Main navigation">
+            <div class="logo">
+                <img src="/img/logo/k-games.png" alt="Logo de K-GAMES" class="navbar-logo">
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="navbar-menu">
+                <li><a href="/html/inicio.html">Inicio</a></li>
+                <li><a href="#">Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenedor principal -->
+    <main class="admin-container">
+        <!-- Barra lateral -->
+        <aside class="admin-sidebar">
+            <h2>Panel del Admin</h2>
+            <ul>
+                <li><button onclick="showTasks()">Gestión de Tareas</button></li>
+                <li><button onclick="showCalculator()">Calculadora</button></li>
+            </ul>
+        </aside>
+
+        <!-- Sección dinámica -->
+        <section class="admin-content">
+            <button onclick="openModal()">Crear Tarea</button>
+
+            <!-- Contenedor para tareas -->
+            <div id="tasks" class="admin-section active">
+                <h2>Gestión de Tareas</h2>
+                <div id="tasks-container">
+                    <!-- Las tareas dinámicas aparecerán aquí -->
+                </div>
+            </div>
+
+            <!-- Modal para agregar tareas -->
+            <div id="task-modal" class="modal hidden">
+                <div class="modal-content">
+                    <h2>Crear Nueva Tarea</h2>
+                    <input type="text" id="task-input" placeholder="Descripción de la tarea" />
+                    <div class="modal-actions">
+                        <button onclick="addTask()">Agregar</button>
+                        <button onclick="closeModal()">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenedor para calculadora -->
+            <div id="calculator" class="admin-section hidden">
+                <h2>Calculadora</h2>
+                <div id="calculator-container">
+                    <!-- Aquí irá la calculadora -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/JavaScript/navbar.js"></script>
+    <script src="/JavaScript/tareas.js"></script>
+    <script src="/JavaScript/calculadora.js"></script>
+</body>
+</html>

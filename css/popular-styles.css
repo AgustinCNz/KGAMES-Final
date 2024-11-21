@@ -189,7 +189,7 @@ nav a:hover {
     }
 
     .menu-toggle {
-        display: none; /* Oculta el botón de menú en dispositivos grandes */
+        display: none; /* Ocultamos el botón de menú en dispositivos grandes */
     }
 }
 
