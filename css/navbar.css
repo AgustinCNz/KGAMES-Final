@@ -157,6 +157,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
+    top: 106.5px;
   }
   
   .menu-toggle + .navbar-menu > li {
