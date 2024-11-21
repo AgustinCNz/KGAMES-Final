@@ -213,3 +213,15 @@ body {
     }
   }
   
+  .inicio{
+    gap: 10px;
+    font-family: "Press Start 2P", cursive;
+}
+
+.inicio a:hover{
+    text-shadow: 0 0 5px #00ff00;
+}
+
+.modal{
+  display: none;
+}
