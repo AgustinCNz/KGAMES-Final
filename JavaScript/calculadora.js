@@ -71,3 +71,10 @@ function simulateButtonClick(value) {
         else appendToDisplay(value);
     }
 }
+// Borrar el último carácter del display
+function deleteLast() {
+    const display = document.getElementById('calc-display');
+    if (display.value !== "0" && display.value !== "Error") {
+        display.value = display.value.slice(0, -1) || "0"; // Quitar el último carácter
+    }
+}
