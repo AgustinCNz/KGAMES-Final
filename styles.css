@@ -312,6 +312,7 @@ a{
 .main-content {
     display: flex;
     gap: 150px;
+    /*max-width: ;*/
 }
 
 .carousel {
@@ -672,3 +673,19 @@ section{
     margin-top: 20px;
 }
 /* FIN DE CARRITO */
+
+@media (max-width: 768px) {
+    .modal {
+        max-width: 80% ;
+    }
+    .carousel {
+        display: none;
+    }
+    .game-modal {
+        max-width: 80%;
+    }
+   .sinopsis h3{
+    font-size: 1.5rem;
+    
+   }
+}
