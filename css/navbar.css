@@ -213,3 +213,142 @@ body {
     }
   }
   
+  .inicio{
+    gap: 10px;
+    font-family: "Press Start 2P", cursive;
+}
+
+.inicio a:hover{
+    text-shadow: 0 0 5px #00ff00;
+}
+
+.modal{
+  display: none;
+}
+/*Estilos para el modal de inicio de sesion*/
+/* Login Modal General */
+.login-modal {
+  display: none; /* Ocultar por defecto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.login-modal.show {
+  display: flex; /* Mostrar modal centrado */
+  opacity: 1;
+  visibility: visible;
+}
+
+.login-modal-content {
+  background-color: #202020;
+  border-radius: 8px;
+  padding: 20px;
+  width: 350px;
+  max-width: 90%;
+  color: #fafafa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+}
+
+.login-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fafafa;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.login-close:hover {
+  color: #f2c94c;
+}
+
+/* Estilos del formulario */
+.login-container h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #f2c94c;
+  font-family: 'Press Start 2P', sans-serif;
+}
+
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+#loginForm label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fafafa;
+  width: 100%;
+  text-align: left;
+}
+
+#loginForm input {
+  width: 90%;
+  padding: 10px;
+  font-size: 14px;
+  color: #202020;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+}
+
+#loginForm input[type="text"],
+#loginForm input[type="password"] {
+  background-color: #fafafa;
+}
+
+#loginForm button {
+  background-color: #f2c94c;
+  color: #000;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#loginForm button:hover {
+  background-color: #d1a836;
+}
+
+#loginMessage {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .login-modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+
+  #loginForm input {
+    width: 100%;
+  }
+
+  #loginForm button {
+    width: 100%;
+  }
+}
+
+
+/*FIN DEL Estilo para el modal de inicio de sesion*/

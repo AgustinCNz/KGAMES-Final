@@ -27,12 +27,12 @@
             </button>
             <ul class="navbar-menu">
                 <li><a href="#">Inicio</a></li>
-                <li><a href="#">Catalogo</a></li>
-                <li><a href="#">Nosotros</a></li>
+                <li><a href="/html/popular.html">Catalogo</a></li>
+                <li><a href="/html/nosotros.html">Nosotros</a></li>
             </ul>
             <div class="navbar-actions">
                 <input type="text" class="search-bar" placeholder="Buscando..." />
-                <button class="btn login-btn">Login</button>
+                <button class="btn login-btn" onclick="ShowModalCuenta()">Login</button>
                 <button class="btn signup-btn">Sign-up</button>
             </div>
         </nav>
@@ -48,11 +48,33 @@
     <aside>
 
     </aside>
+
+<!---MODAL PARA CUENTA-->
+
+    <!-- Modal para iniciar sesión -->
+<div id="myModalCuenta" class="login-modal">
+    <div class="login-modal-content">
+      <span class="login-close" onclick="closeModalCuenta()">&times;</span>
+      <div class="login-container">
+        <h2 id="loginh2">Iniciar sesión</h2>
+        <form id="loginForm" onsubmit="iniciarSesion(event)">
+          <label id="blanco">Usuario</label>
+          <input type="text" id="username" placeholder="Usuario" required>
+          <label id="blanco">Contraseña</label>
+          <input type="password" id="password" placeholder="Contraseña" required>
+          <button type="submit" id="iniciar">Iniciar Sesión</button>
+        </form>
+        <p id="loginMessage"></p>
+      </div>
+    </div>
+  </div>
+
+<!--FIN MODAL PARA CUENTA-->
     <footer>
 
     </footer>
     
     <script src="/JavaScript/navbar.js"></script>
-
+   <script src="/JavaScript/auth.js"></script>
 </body>
 </html>
