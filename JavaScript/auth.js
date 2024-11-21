@@ -1,11 +1,13 @@
-function ShowModalCuenta(){
-    const modal = document.getElementById('myModalCuenta')
-    modal.style.display = 'block';
-}
-function closeModalCuenta(){
-    const modal = document.getElementById('myModalCuenta')
-    modal.style.display = 'none';
-}
+function ShowModalCuenta() {
+    const modal = document.getElementById('myModalCuenta');
+    modal.classList.add('show'); // Agregar clase 'show' para abrir el modal
+  }
+  
+  function closeModalCuenta() {
+    const modal = document.getElementById('myModalCuenta');
+    modal.classList.remove('show'); // Quitar clase 'show' para cerrar el modal
+  }
+  
 
 function iniciarSesion(event){
     event.preventDefault();

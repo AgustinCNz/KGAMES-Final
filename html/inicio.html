@@ -51,24 +51,23 @@
 
 <!---MODAL PARA CUENTA-->
 
-    <div id="myModalCuenta" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModalCuenta()">&times;</span>
-            <div class="login-container">
-                <h2 id="loginh2">Iniciar sesion</h2>
-                <form id="loginForm" onsubmit="iniciarSesion(event)">
-                    <label id="blanco">Usuario</label>
-                    <input type="text" id="username" placeholder="Usuario" required>
-        
-                    <label id="blanco">Contraseña</label>
-                    <input type="password"  id="password" placeholder="Contraseña" required>
-                    
-                    <button type="submit" id="iniciar" >Iniciar Sesion</button>
-                </form>
-                <p id="loginMessage"></p>
-            </div>
-        </div>
+    <!-- Modal para iniciar sesión -->
+<div id="myModalCuenta" class="login-modal">
+    <div class="login-modal-content">
+      <span class="login-close" onclick="closeModalCuenta()">&times;</span>
+      <div class="login-container">
+        <h2 id="loginh2">Iniciar sesión</h2>
+        <form id="loginForm" onsubmit="iniciarSesion(event)">
+          <label id="blanco">Usuario</label>
+          <input type="text" id="username" placeholder="Usuario" required>
+          <label id="blanco">Contraseña</label>
+          <input type="password" id="password" placeholder="Contraseña" required>
+          <button type="submit" id="iniciar">Iniciar Sesión</button>
+        </form>
+        <p id="loginMessage"></p>
+      </div>
     </div>
+  </div>
 
 <!--FIN MODAL PARA CUENTA-->
     <footer>
