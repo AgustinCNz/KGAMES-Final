@@ -3,10 +3,15 @@ let tasks = [];
 
 // Mostrar la sección de tareas
 function showTasks() {
-    document.getElementById('tasks').classList.add('active');
-    document.getElementById('calculator').classList.remove('active');
-    renderTasks();
+    const taskSection = document.getElementById('tasks');
+    const calculatorSection = document.getElementById('calculator');
+    const createButton = document.querySelector('button.crear-tarea');
+
+    taskSection.classList.add('active'); // Mostrar tareas
+    calculatorSection.classList.remove('active'); // Ocultar calculadora
+    createButton.classList.add('active'); // Mostrar botón Crear Tarea
 }
+
 
 // Renderizar las tareas en la lista
 function renderTasks() {
