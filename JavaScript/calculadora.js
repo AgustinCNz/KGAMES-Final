@@ -26,6 +26,36 @@ function clearDisplay() {
     display.value = "0";
 }
 
+function deleteLast() {
+    const display = document.getElementById('calc-display');
+
+    // Verifica si no está vacío ni contiene "Error"
+    if (display.value !== "0" && display.value !== "Error") {
+        // Corta el último carácter del valor
+        display.value = display.value.slice(0, -1);
+
+        // Si el resultado es vacío, establece "0" como valor
+        if (display.value === "") {
+            display.value = "0";
+        }
+    }
+}
+
+document.addEventListener('keydown', (event) => {
+    const display = document.getElementById('calc-display');
+
+    if (event.key === "Backspace") {
+        event.preventDefault(); // Evita el comportamiento predeterminado de Backspace.
+        
+        // Borra el último carácter del display
+        if (display.value !== "0" && display.value !== "Error") {
+            display.value = display.value.slice(0, -1) || "0"; // Elimina un carácter
+        }
+    }
+});
+
+
+
 // Función para calcular el resultado
 function calculateResult() {
     const display = document.getElementById('calc-display');
@@ -45,7 +75,8 @@ const keyMap = {
     '4': '4', '5': '5', '6': '6', '*': '*',
     '1': '1', '2': '2', '3': '3', '-': '-',
     '0': '0', '.': '.', '+': '+', 'Enter': '=',
-    'Backspace': ''
+    'C': 'C','Backspace': 'Backspace',
+
 };
 
 // Detectar teclas presionadas
@@ -72,9 +103,4 @@ function simulateButtonClick(value) {
     }
 }
 // Borrar el último carácter del display
-function deleteLast() {
-    const display = document.getElementById('calc-display');
-    if (display.value !== "0" && display.value !== "Error") {
-        display.value = display.value.slice(0, -1) || "0"; // Quitar el último carácter
-    }
-}
+

@@ -2,7 +2,6 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #fafa;
     color: #fafafa;
   }
   
@@ -352,3 +351,163 @@ body {
 
 
 /*FIN DEL Estilo para el modal de inicio de sesion*/
+
+/* Texto animado*/
+/* Contenedor del texto animado */
+/* Contenedor del texto animado */
+.animated-banner {
+  position: relative;
+  background-color: #202020; /* Fondo oscuro para resaltar */
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center; /* Centrar el texto */
+  border-bottom: 2px solid #f2c94c; /* Línea decorativa opcional */
+}
+
+.animated-banner p {
+  display: inline-block;
+  font-size: 26px;
+  font-family: 'Press Start 2P', cursive;
+  color: #f2c94c;
+  animation: swipe 5s linear infinite;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Efecto de resplandor */
+}
+
+/* Destacar solo el texto K-GAMES */
+.k-games {
+  color: #ff0000; /* Rojo brillante para destacar */
+  position: relative;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; /* Resplandor adicional */
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+/* Efecto hover en K-GAMES */
+.k-games:hover {
+  color: #ffffff; /* Cambia a blanco al pasar el láser */
+  text-shadow: 0 0 15px #ff0000, 0 0 25px #ff0000;
+}
+
+/* El láser */
+.laser {
+  position: absolute;
+  top: 50%; /* Alineado con el texto */
+  left: -100px; /* Empieza fuera de la pantalla */
+  width: 220px; /* Longitud del láser */
+  height: 20px;
+  background: linear-gradient(90deg, rgba(255, 0, 0, 0) 0%, rgba(255, 0, 0, 1) 50%, rgba(255, 0, 0, 0) 100%);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+  animation: laser-move 5s linear infinite;
+  transform: translateY(-50%);
+  z-index: 0; /* Detrás del texto */
+  opacity: 0.8; /* Transparencia ligera para suavizar el efecto */
+}
+
+/* Animación del texto */
+@keyframes swipe {
+  0% {
+      transform: translateX(-100%);
+  }
+  100% {
+      transform: translateX(200%);
+  }
+}
+
+/* Animación del láser */
+@keyframes laser-move {
+  0% {
+      left: -100px;
+  }
+  100% {
+      left: 200%; /* Termina fuera de la pantalla */
+  }
+}
+
+/* Responsivo: Ajustar tamaño del texto en pantallas pequeñas */
+@media (max-width: 768px) {
+  .animated-banner p {
+      font-size: 20px;
+  }
+
+  .laser {
+      width: 80px; /* Láser más corto en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .animated-banner p {
+      font-size: 16px;
+  }
+
+  .laser {
+      width: 60px; /* Láser más corto en móviles */
+  }
+}
+
+/*Hero para inicio.html*/
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  background: url(/img/imgtransition/fondo3.png) no-repeat center center/cover; /* Ajusta la ruta */
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Oscurece la imagen */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  color: #fff; /* Texto blanco */
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-family: 'Press Start 2P', cursive;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-family: Arial, sans-serif;
+  margin-bottom: 0;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .hero-title {
+      font-size: 2rem;
+  }
+
+  .hero-subtitle {
+      font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+      font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+      font-size: 0.9rem;
+  }
+}
