@@ -76,6 +76,7 @@ const keyMap = {
     '1': '1', '2': '2', '3': '3', '-': '-',
     '0': '0', '.': '.', '+': '+', 'Enter': '=',
     'C': 'C','Backspace': 'Backspace',
+
 };
 
 // Detectar teclas presionadas
@@ -96,7 +97,7 @@ function simulateButtonClick(value) {
         setTimeout(() => button.classList.remove('active'), 200); // Desiluminar después de un tiempo
 
         // Ejecutar la función correspondiente
-        if (value === 'C') clearDisplay();
+        if (value === '← - 1') clearDisplay();
         else if (value === '=') calculateResult();
         else appendToDisplay(value);
     }
