@@ -6,4 +6,4 @@ function toggleMenu() {
     toggleButton.classList.toggle('active');
   }
   
-/* fin de la funcion para el boton hamburguesa*/
+

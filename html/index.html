@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="/css/navbar.css">
+<link rel="stylesheet" href="/css/popular-styles.css">
+    <link rel="shortcut icon" href="/img/logo/k-games.png">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-GAMES</title>
+</head>
+<body>
+    <!--header-->
+    <!-- Clases para el css: -->
+    <!-- nav [navbar]-->
+     <!-- div [logo]-->
+      <!-- ul [navbar-menu]-->
+   
+      <header>  <!-- div acciones del navbar : [barra de busqueda (search-bar) : boton login (btn login-btn) : boton Sing-up (btn singup-btn)] -->
+    <div class="nav-bar"> 
+        <img class="logo" src="/img/logo/k-games.png" alt=""> 
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button> <!-- Botón de menú -->
+        <div class="search-container">
+            <nav class="inicio">
+                <a href="/html/index.html">Inicio</a>
+                <div class="dropdown"> 
+                    <a href="#" class="dropdown-toggle">Categoría</a> 
+                    <div class="dropdown-content"> 
+                        <a href="#" class="filter-category" data-category="Aventura">Aventura</a> 
+                        <a href="#" class="filter-category" data-category="Accion">Acción</a> 
+                        <a href="#" class="filter-category" data-category="Deporte">Deporte</a> 
+                         <a href="#" class="filter-category" data-category="PS4">PS4</a>
+                        <a href="#" class="filter-category" >Todos</a>
+                    </div>
+                </div>
+                 <a href="/html/popular.html" class="dropdown-toggle">Juegos Populares</a>
+                <a href="/html/nosotros.html">Sobre Nosotros</a>
+                <div class="dropdown"> 
+                    <a href="#" class="dropdown-toggle">Carrito</a> 
+                    <div class="dropdown-content"> 
+                        <div id="cart-container">
+                            <h3>Carrito de Compras</h3>
+                            <ul id="cart-list">
+                                <!-- Los juegos comprados aparecerán aquí -->
+                            </ul>
+                            <p><strong>Total: </strong><span id="total-price">$0.00</span></p>
+                            <button id="clear-cart" onclick="clearCart()">Finalizar Compra</button>
+                            <button id="clear-cart" onclick="clearCart()">Limpiar Carrito</button>
+                        </div>
+                    </div> 
+                </div>
+                <input type="text" placeholder="Buscar..." class="search-bar" id="searchInput"> 
+                <button class="search-button" onclick="searchGame()">🔍</button>
+                 <button class="btn login-btn" onclick="ShowModalCuenta()">Login</button>
+            </div>
+        </nav>
+    </div>
+                
+    </header>
+    <!--Fin del header-->
+    
+    <!-- Texto animado -->
+    <div class="animated-banner">
+        <p class="text-laser">
+            Welcome to <span class="k-games">K-GAMES</span>
+        </p>
+        <div class="laser"></div>
+    </div>
+    
+    <section class="hero-section">
+        <div class="hero-overlay">
+            <h1 class="hero-title">Bienvenido a K-GAMES</h1>
+            <p class="hero-subtitle">El lugar donde los juegos cobran vida</p>
+        </div>
+    </section>
+    
+
+
+
+
+  <!---MODAL PARA CUENTA-->
+
+    <!-- Modal para iniciar sesión 
+<div id="myModalCuenta" class="login-modal">
+    <div class="login-modal-content">
+      <span class="login-close" onclick="closeModalCuenta()">&times;</span>
+      <div class="login-container">
+        <h2 id="loginh2">Iniciar sesión</h2>
+        <form id="loginForm" onsubmit="iniciarSesion(event)">
+          <label id="blanco">Usuario</label>
+          <input type="text" id="username" placeholder="Usuario" required>
+          <label id="blanco">Contraseña</label>
+          <input type="password" id="password" placeholder="Contraseña" required>
+          <button type="submit" id="iniciar">Iniciar Sesión</button>
+        </form>
+        <p id="loginMessage"></p>
+      </div>
+    </div>
+  </div>
+
+FIN MODAL PARA CUENTA-->
+
+<!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Sobre Nosotros</h3>
+                <p>Somos tu tienda de juegos preferida, ofreciendo los últimos títulos para PS4 y PS5. ¡Explora y encuentra tu próximo juego favorito!</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <ul>
+                    <li>Email: contacto@k-games.com</li>
+                    <li>Teléfono: +1 123 456 7890</li>
+                    <li>Dirección: 123 Gaming Street, Miami, FL</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="https://github.com/AgustinCNz/KGAMES-Final"><img src="/img2/iconos/facebook.png" alt="Facebook"></a>
+                    <a href="https://github.com/AgustinCNz/KGAMES-Final"><img src="/img2/iconos/twitter.png" alt="Twitter"></a>
+                    <a href="https://github.com/AgustinCNz/KGAMES-Final"><img src="/img2/iconos/instagram.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 K-GAMES. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+ 
+  <script src="/JavaScript/auth.js"></script>
+  <script src="/JavaScript/popular-logic.js"></script> <!-- carrito, search -->
+    <script src="/JavaScript/modal-loader.js"></script>
+
+</body>
+</html>

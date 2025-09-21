@@ -1,106 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <link rel="stylesheet" href="/css/navbar.css">
-    <link rel="stylesheet" href="/css/admin.css">
-    <link rel="stylesheet" href="/css/calculadora.css">
-    <link rel="shortcut icon" href="/img/logo/k-games.png">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-GAMES - Admin</title>
+  <meta charset="UTF-8">
+  <title>Panel Admin - KGames</title>
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="shortcut icon" href="/img/logo/k-games.png">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <!-- Barra de navegación -->
-    <header>
-        <nav class="navbar" role="navigation" arial-label="Main navigation">
-            <div class="logo">
-                <img src="/img/logo/k-games.png" alt="Logo de K-GAMES" class="navbar-logo">
-            </div>
-            <button class="menu-toggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="navbar-menu">
-                <li><a href="/html/inicio.html">Inicio</a></li>
-                <li><a href="/html/inicio.html">Cerrar sesión</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Barra de navegación -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="logo">
+        <img src="/img/logo/k-games.png" alt="Logo de K-GAMES" class="navbar-logo">
+      </div>
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar-menu">
+        <li><a href="/html/index.html">Inicio</a></li>
+        <li><a href="/html/index.html">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Contenedor principal -->
-    <main class="admin-container">
-        <!-- Barra lateral -->
-        <aside class="admin-sidebar">
-            <h2>Panel del Admin</h2>
-            <ul>
-                <li><button onclick="showTasks()">Gestión de Tareas</button></li>
-                <li><button onclick="ShowmodalCalculadora()">Calculadora</button></li>
-            </ul>
-        </aside>
+  <!-- Contenedor principal -->
+  <main class="admin-container">
+    <!-- Barra lateral -->
+    <aside class="admin-sidebar">
+      <h2>Panel del Admin</h2>
+      <ul>
+        <li><button onclick="showProducts()">Gestión de Productos</button></li>
+      </ul>
+    </aside>
 
-        <!-- Sección dinámica -->
-        <section class="admin-content">
-            <button onclick="openModal()">Crear Tarea</button>
+    <!-- Sección dinámica -->
+    <section class="admin-content">
+      <button  id="agregar-producto" onclick="openModal()">Agregar Producto</button>
 
-            <!-- Contenedor para tareas -->
-            <div id="tasks" class="admin-section active">
-                <h2>Gestión de Tareas</h2>
-                <div id="tasks-container">
-                    <!-- Las tareas dinámicas aparecerán aquí -->
-                </div>
-            </div>
+      <!-- Contenedor para productos -->
+      <div id="admin-juegos" class="admin-section active">
+        <!-- Los productos dinámicos aparecerán aquí -->
+      </div>
 
-            <!-- Modal para agregar tareas -->
-            <div id="task-modal" class="modal hidden">
-                <div class="modal-content">
-                    <h2>Crear Nueva Tarea</h2>
-                    <input type="text" id="task-input" placeholder="Descripción de la tarea" />
-                    <div class="modal-actions">
-                        <button onclick="addTask()">Agregar</button>
-                        <button onclick="closeModal()">Cancelar</button>
-                    </div>
-                </div>
-            </div>
+      <!-- Modal para agregar/editar producto -->
+<div id="task-modal" class="modal">
+  <div class="modal-content">
+    <h2 id="modal-title">Agregar Producto</h2>
+    <input type="text" id="titulo" placeholder="Título" required />
+    <input type="number" id="precio" placeholder="Precio" required />
+    <input type="text" id="categoria" placeholder="Categoría" required />
+    <input type="text" id="descripcion" placeholder="Descripción" required />
+    <input type="text" id="imagen" placeholder="URL Imagen" required />
+    <div class="modal-actions">
+      <button onclick="saveProduct()">Guardar</button>
+      <button onclick="closeModal()">Cancelar</button>
+    </div>
+  </div>
+</div>
 
-            <!-- Contenedor para calculadora -->
-            <div id="calculator" class="admin-section hidden">
-                <h2>Calculadora</h2>
-                <div id="calculator-container">
-                    <div class="calculator">
-                        <input type="text" id="calc-display" readonly placeholder="0">
-                        <div class="calc-buttons">
-                            <button onclick="appendToDisplay('7')">7</button>
-                            <button onclick="appendToDisplay('8')">8</button>
-                            <button onclick="appendToDisplay('9')">9</button>
-                            <button onclick="appendToDisplay('/')">/</button>
-                            <button onclick="appendToDisplay('4')">4</button>
-                            <button onclick="appendToDisplay('5')">5</button>
-                            <button onclick="appendToDisplay('6')">6</button>
-                            <button onclick="appendToDisplay('*')">*</button>
-                            <button onclick="appendToDisplay('1')">1</button>
-                            <button onclick="appendToDisplay('2')">2</button>
-                            <button onclick="appendToDisplay('3')">3</button>
-                            <button onclick="appendToDisplay('-')">-</button>
-                            <button onclick="appendToDisplay('0')">0</button>
-                            <button onclick="appendToDisplay('.')">.</button>
-                            <button onclick="calculateResult()">=</button>
-                            <button onclick="appendToDisplay('+')">+</button>
-                            <button onclick="clearDisplay()">C</button>
-                            <button onclick="deleteLast()">←</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </section>
-    </main>
+    </section>
+  </main>
 
-    
-
-    <script src="/JavaScript/navbar.js"></script>
-    <script src="/JavaScript/tareas.js"></script>
-    <script src="/JavaScript/calculadora.js"></script>
+  <script src="/JavaScript/navbar.js"></script>
+  <script src="/JavaScript/admin.js"></script>
 </body>
 </html>

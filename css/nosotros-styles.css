@@ -127,7 +127,215 @@ body{
     }
     
 /****************************/
-    
+
+
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 10px;
+    }
+  
+    .navbar > .navbar-logo {
+      margin-bottom: 10px;
+    }
+  
+    .menu-toggle + .navbar-menu {
+      width: 100%;
+    }
+  
+    .navbar-actions {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .navbar-actions > .search-bar {
+      width: 90%;
+    }
+  
+    .navbar-actions > .btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .navbar {
+      padding: 5px 10px;
+    }
+  
+    .menu-toggle + .navbar-menu {
+      top: 50px;
+      right: 10px;
+      width: calc(100% - 20px);
+    }
+  
+    .navbar-actions > .btn {
+      font-size: 12px;
+      padding: 6px;
+    }
+  }
+  
+  .inicio{
+    gap: 10px;
+    font-family: "Press Start 2P", cursive;
+}
+
+.inicio a:hover{
+    text-shadow: 0 0 5px #00ff00;
+}
+
+.modal{
+  display: none;
+}
+
+/*boton hamburguesa*/
+/* Ocultar el menú en pantallas pequeñas por defecto */
+.inicio {
+    display: none;
+    flex-direction: column; /* Para que los elementos se apilen en vertical */
+    background-color: #162447;
+    position: absolute;
+    top: 60px; /* Ajustar según el tamaño del navbar */
+    right: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 1000;
+}
+
+/* Mostrar el menú cuando se activa */
+.inicio.active {
+    display: flex;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Mostrar el botón de menú en pantallas pequeñas */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .search-container {
+        flex: 1;
+    }
+
+    .logo {
+        margin-right: auto;
+    }
+}
+
+
+
+/* Mostrar el menú en dispositivos de tamaño normal (tabletas y más grandes) */
+@media (min-width: 769px) {
+    .inicio {
+        display: flex; /* Asegura que el menú se muestre en dispositivos grandes */
+        flex-direction: row; /* Ajusta la dirección para que los elementos se alineen horizontalmente */
+        position: static; /* Remueve el posicionamiento absoluto */
+        width: auto; /* Ajusta el ancho */
+        padding: 0; /* Remueve el padding adicional */
+    }
+
+    .menu-toggle {
+        display: none; /* Ocultamos el botón de menú en dispositivos grandes */
+    }
+}
+
+/* Mostrar el botón de menú solo en pantallas pequeñas */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/*fin del Menu para celulares*/
+
+
+    /********************Menu2**************/
+    /* Botón hamburguesa */
+  .menu-toggle {
+    position: fixed;
+    top: 25px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 0;
+    z-index: 1000;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+  }
+  
+  .menu-toggle span {
+    display: block;
+    background-color: #fafafa;
+    height: 3px;
+    width: 100%;
+    border-radius: 2px;
+    position: absolute;
+    transition: transform 0.3s ease, opacity 0.3s ease, top 0.3s ease;
+  }
+  
+  .menu-toggle span:nth-child(1) {
+    top: 0;
+  }
+  
+  .menu-toggle span:nth-child(2) {
+    top: 10px;
+  }
+  
+  .menu-toggle span:nth-child(3) {
+    top: 20px;
+  }
+  
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 10px;
+  }
+  
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 10px;
+  }
+  
+  /* Menú desplegable */
+  .menu-toggle + .navbar-menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #202020;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    padding: 10px 0;
+    z-index: 999;
+    display: none;
+  }
+  
+  .menu-toggle + .navbar-menu.active {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    top: 106.5px;
+  }
+  
+  .menu-toggle + .navbar-menu > li {
+    margin: 10px 0;
+    text-align: center;
+  }
+  
 /* INICIO MENU DESPLEGABLE*/
 .dropdown { 
     position: relative; 
@@ -163,7 +371,7 @@ body{
 .submenu-content { 
     display: none; 
     position: absolute; 
-    left: 180px; /* Ajusta según sea necesario */ 
+    left: 180px; /* Ajusta según sea necesario */
     top: 0; 
     background: url(https://i.pinimg.com/564x/91/c3/6e/91c36ebeccbc439e5b889b0d8cb9032a.jpg);
     background-position: center;
