@@ -4,20 +4,38 @@
 
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/nosotros-styles.css">
+     
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>K-GAMES</title>
 </head>
 <body>
-    <div class="nav-bar"> 
+
+  <div class="nav-bar"> 
         <img class="logo" src="/img/logo/k-games.png" alt=""> 
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button> <!-- Botón de menú -->
         <div class="search-container">
             <nav class="inicio">
-                <a href="/html/inicio.html">Inicio</a>
-                <a href="/html/popular.html" class="dropdown-toggle">Juegos Populares</a>
+                <a href="/html/index.html">Inicio</a>
+                <div class="dropdown"> 
+                    <a href="#" class="dropdown-toggle">Categoría</a> 
+                    <div class="dropdown-content"> 
+                        <a href="#">Aventura</a> 
+                        <a href="#">Acción</a> 
+                        <a href="#">Deporte</a> 
+                    </div> 
+                </div>
+                
+                <a href="/html/nosotros.html">Sobre Nosotros</a>
+                
+                <input type="text" placeholder="Buscar..." class="search-bar" id="searchInput"> 
+                <button class="search-button" onclick="searchGame()">🔍</button>
             </nav>
         </div>
     </div>
+
+
+  
 
    
 
@@ -64,25 +82,11 @@
                        
                       </li>
                       <li class="slide">
-                        <img class="avatar" src="/img3/ramiro.jpg" alt="cliente 1">
-                        <blockquote>"Encargado de la supervisión general y del buen funcionamiento del sitio web. " </blockquote>
-                        
-                        <h3 class="text-first-color">Ramiro Songzogni</h3>
-                      
-                      </li>
-                      <li class="slide">
                         <img class="avatar" src="/img3/agustin.jpg" alt="cliente 1">
                         <blockquote>"Responsable de la gestión de la sección de juegos populares, asegurándose de que siempre esté actualizada."
                         </blockquote>
                         <h3 class="text-first-color">Correa Agustin</h3>
                       
-                      </li>
-                      <li class="slide">
-                        <img class="avatar" src="/img3/varela.jpg" alt="cliente 1">
-                        <blockquote>"Encargado de la sección de ventas de productos, centrado en mejorar la experiencia de compra de los clientes. "
-                        </blockquote>
-                        <h3 class="text-first-color">Varela </h3>
-                   
                       </li>
                     </ul>
                     <aside class="slide-nav">
@@ -207,7 +211,12 @@
                     </div>
     </footer>
 
-<script src="/logic.js"></script>
+<script src="/JavaScript/auth.js"></script>
 <script src="/JavaScript/nosotros.js"></script>
+<script src="/JavaScript/popular-logic.js"></script>
+<script src="/JavaScript/navbar.js"></script>
+
+
+
 </body>
 </html>

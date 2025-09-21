@@ -1,0 +1,66 @@
+{
+  "juegos": [
+    {
+      "id": 1,
+      "titulo": "A PLAGUE TALE INNOCENCE",
+      "descripcion": "Una plaga interminable! muy valorado",
+      "precio": 29.99,
+      "categoria": "Deportes",
+      "imagen": "/img2/juegos_ps4/aPlageps4.png"
+    },
+    {
+      "id": 2,
+      "titulo": "DRAGONBALL THE BRAKERS EDICION ESPECIAL",
+      "descripcion": "LOS MEJORES GRAFICOS! las mejores peleas y no dejes de lado a tus personajes favoritos",
+      "precio": 139.99,
+      "categoria": "PS4",
+      "imagen": "/img2/juegos_ps4/dragonballTheBrakersps4.png"
+    },
+    {
+      "id": 3,
+      "titulo": "EVERYBODY'S GOLF Version VR",
+      "descripcion": "Acción y deporte! no te olvides de cuidar los objetos alrededor debido a que es con su mejor version VR! y haz tu hoyo en uno!",
+      "precio": 9.99,
+      "categoria": "PS4",
+      "imagen": "/img2/juegos_ps4/GOLFVRPs4.png"
+    },
+    {
+      "id": 4,
+      "titulo": "GTA V en PS4",
+      "descripcion": "Alcohol, Drogas, Club Nocturnos, Autos y Armas en un solo lugar! que mejor que interactuar con nuestro modo historia y jugar online con múltiples jugadores en un mundo lleno de actividades y carreras callejeras con desafios en pandillas",
+      "precio": 29.99,
+      "categoria": "PS4",
+      "imagen": "/img2/juegos_ps4/GTAVps4.png"
+    },
+    {
+      "id": 5,
+      "titulo": "LIFE IS STRANGE TRUE COLORS",
+      "descripcion": "LIFE IS STRANGE es un juego muy entretenido para todo tipo de público",
+      "precio": 10,
+      "categoria": "PS4",
+      "imagen": "/img2/juegos_ps4/lifeisstrange.png"
+    },
+    {
+      "id": 6,
+      "titulo": "MARVEL VS. CAPCOM",
+      "descripcion": "En hora buena nos encontramos con nuestros personajes de nuestros universos favoritos!",
+      "precio": 12,
+      "categoria": "Acción",
+      "imagen": "/img2/juegos_ps4/MarvelvsCapcom.png"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "usuario": "admin",
+      "password": "1234",
+      "rol": "admin"
+    },
+    {
+      "id": 2,
+      "usuario": "cliente",
+      "password": "abcd",
+      "rol": "cliente"
+    }
+  ]
+}

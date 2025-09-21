@@ -1,8 +1,14 @@
 // Arreglo para almacenar los productos del carrito
 let cart = [];
 
-// Función para añadir un juego al carrito
 function addToCart(productName, price) {
+    // Validar rol
+    const rol = sessionStorage.getItem('rol');
+    if(!rol || rol !== 'cliente') {
+        alert("Debes iniciar sesión como cliente para comprar");
+        return;
+    }
+
     // Crear un objeto para el producto
     const product = { name: productName, price: price };
 
@@ -12,6 +18,7 @@ function addToCart(productName, price) {
     // Actualizar la visualización del carrito
     updateCart();
 }
+
 
 // Función para actualizar la lista del carrito y el total
 function updateCart() {
@@ -69,3 +76,19 @@ function toggleMenu() {
     const nav = document.querySelector('.inicio');
     nav.classList.toggle('active');
 }
+
+function cerrarSesion() {
+    sessionStorage.clear(); // Borra usuario y rol
+    alert("Has cerrado sesión");
+    window.location.href = "/html/index.html"; // Redirige al inicio
+}
+window.addEventListener('load', () => {
+    const logoutBtn = document.getElementById('logoutBtn');
+    const rol = sessionStorage.getItem('rol');
+
+    if(rol) {
+        logoutBtn.style.display = 'inline-block';
+    } else {
+        logoutBtn.style.display = 'none';
+    }
+});
